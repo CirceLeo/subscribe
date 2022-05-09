@@ -38,3 +38,9 @@ code {
 .active {
   color: red;
 }
+
+.signup_form {
+  background-color: antiquewhite;
+  border-radius: 5em;
+  text-align: center;
+}
