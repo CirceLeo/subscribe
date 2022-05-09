@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,31 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+.header {
+  background-color: aqua;
+  text-align: center;
+  border: .2em solid black;
+  padding: .5em;
+}
+
+.navLinks a{
+  text-decoration: none;
+  margin: 1em;
+  background-color: antiquewhite;
+  border-radius: 5em;
+  padding: .2em;
+}
+
+.navLinks a:hover{
+  text-decoration: none;
+  margin: 1em;
+  background-color: rgb(153, 136, 114);
+  border-radius: 5em;
+  padding: .2em;
+}
+
+.active {
+  color: red;
 }
