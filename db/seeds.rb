@@ -26,7 +26,7 @@ User.create(
     Box.create(
         title: Faker::Marketing.buzzwords,
         price: rand(4.0..30.0),
-        items: "Ice, Bourbon, Lemon Peel"
+        items: "Ice, Bourbon, Lemon Peel",
         description: "delicious"
     )
 end

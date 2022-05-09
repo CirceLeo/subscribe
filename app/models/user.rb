@@ -4,7 +4,7 @@ class User < ApplicationRecord
     has_many :subscriptions
     has_many :boxes, through: :subscriptions
 
-    validates :username, presence: true uniqueness: true
+    validates :username, presence: true, uniqueness: true
 
     def create
         user = User.create(user_params)

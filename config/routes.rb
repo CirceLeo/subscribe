@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :boxes
   resources :users
 
+  #namespace :api do
+  #namespace :v1 do
+  #(links will be /api/v1/login)
+
   post '/login', to: 'sessions#create'
   delete '/logoout', to: 'sessions#destroy'
 
