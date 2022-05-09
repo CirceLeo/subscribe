@@ -27,7 +27,7 @@ User.create(
         title: Faker::Marketing.buzzwords,
         price: rand(4.0..30.0),
         items: "Ice, Bourbon, Lemon Peel",
-        description: "delicious"
+        description: Faker::Movie.quote
     )
 end
 
