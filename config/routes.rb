@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   #(links will be /api/v1/login)
 
   post '/login', to: 'sessions#create'
-  delete '/logoout', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
 
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'

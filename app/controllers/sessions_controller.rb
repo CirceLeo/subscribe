@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    skip_before_action :user_authorize, only: create
+    # skip_before_action :user_authorize, only: :create
     #does this mean you can't access unless you're a user cause no thank you
 
     def create
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             render json: user, status: :created
         else 
-            render json: {error: "Invalid username or passord"}, status: :unauthorized
+            render json: {error: "Invalid username or password"}, status: :unauthorized
         end
     end
 
