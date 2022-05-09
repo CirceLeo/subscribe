@@ -1,5 +1,7 @@
 class BoxesController < ApplicationController
     before_action :find_box, only: [:show, :update, :destroy]
+    skip_before_action :authorize, only: :index, :show
+
     def create
         box = Box.create!(box_params)
         render json: box, status: :created
