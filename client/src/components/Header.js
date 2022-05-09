@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom"
 
-// import navLinks (?)
 function Header(props) {
     
     return (

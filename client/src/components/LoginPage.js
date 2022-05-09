@@ -1,8 +1,12 @@
 import Header from "./Header"
 import SignUpForm from "./SignUpForm"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
-function LoginPage({goodLogin}) {
+
+function LoginPage({}) {
+
+    const navigate = useNavigate()
 
     const [formData, setFormData] = useState({username: '', password: ''})
     const [showSignUp, setShowSignUp] = useState(false)
@@ -22,17 +26,19 @@ function LoginPage({goodLogin}) {
         .then( res => {
             if(res.ok){
                 res.json().then(user => {
-                    goodLogin(user)
+                    // goodLogin(user)
                     setErrors(null)
                     console.log("logged in!")
+                    navigate('/')
                 })
             } else {
                 res.json().then(response => {
+                    console.log(response.error)
                     setErrors(response.error)
                     setShowErrors(true)
                 })
             }
-            e.target.reset()
+            setFormData({username: '', password: ''})
         })
         .catch( error => console.log(error.message));
     }

@@ -17,14 +17,14 @@ function App() {
   //   .then((data) => setCount(data.count))
   // }, [])
 
-  const [user, setUser] = useState(null)
+  // const [user, setUser] = useState(null)
 
-  fetch("http://localhost:3000/me")
-  .then(res => {
-    if (res.ok) {
-      res.json.then(user => setUser(user))
-    }
-  }, [])
+  // fetch("http://localhost:3000/me")
+  // .then(res => {
+  //   if (res.ok) {
+  //     res.json.then(user => setUser(user))
+  //   }
+  // }, [])
 
 
   return (
@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path='/' element={<BoxesPage/>} />
         <Route path='/boxes' element={<BoxesPage/>} />
-        <Route path='/login' element={<LoginPage goodLogin={setUser}/>} />
+        <Route path='/login' element={<LoginPage />} />
         <Route path='/editboxes' element={<AdminBoxes/>} />
         <Route path='/checkout' element={<CheckoutForm/>} />
         <Route path='/myboxes' element={<UserBoxes/>} />
