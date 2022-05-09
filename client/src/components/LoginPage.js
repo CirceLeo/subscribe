@@ -11,7 +11,7 @@ function LoginPage({}) {
     const [formData, setFormData] = useState({username: '', password: ''})
     const [showSignUp, setShowSignUp] = useState(false)
     const [errors, setErrors] = useState([]);
-    const [showErrors, setShowErrors] = useState(true)
+    const [showErrors, setShowErrors] = useState(false)
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -57,7 +57,7 @@ function LoginPage({}) {
         <div>
             <Header />
             <h1>Login</h1>
-            {showErrors ? <p className="logon_issue">{errors} <button onClick={setShowErrors(false)}>X</button></p> : null }
+            {showErrors ? <p className="logon_issue">{errors} <button onClick={() => setShowErrors(false)}>X</button></p> : null }
 
             <form onSubmit={handleSubmit}>
                 <label>username</label>
