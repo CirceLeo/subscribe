@@ -9,13 +9,7 @@ import AdminBoxes from './components/AdminBoxes';
 import UserBoxes from './components/UserBoxes';
 
 function App() {
-  // const [count, setCount] = useState(0)
 
-  // useEffect(() => {
-  //   fetch("/hello")
-  //   .then((r) => r.json())
-  //   .then((data) => setCount(data.count))
-  // }, [])
 
   return (
     <Router>
@@ -28,6 +22,8 @@ function App() {
         <Route path='/myboxes' element={<UserBoxes/>} />
       </Routes>
     </Router>
+
+
   );
 }
 
