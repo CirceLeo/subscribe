@@ -10,10 +10,10 @@ class UsersController < ApplicationController
     end
 
     def show
-        if params[:id]
-            user = User.find(params[:id])
-            render json: user
-        end
+        # if params[:id]
+        #     user = User.find(params[:id])
+        #     render json: user
+        # end
         #authenticating a logged in user
         if @user
             render json: @user, status: :ok

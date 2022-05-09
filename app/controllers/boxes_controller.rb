@@ -1,6 +1,6 @@
 class BoxesController < ApplicationController
     before_action :find_box, only: [:show, :update, :destroy]
-    before_action :admin_authorize, except: [:index, :show]
+    # before_action :admin_authorize, except: [:index, :show]
     # skip_before_action :admin_authorize, only: :index, :show
 
     # skip_before_action :user_authorize #?
