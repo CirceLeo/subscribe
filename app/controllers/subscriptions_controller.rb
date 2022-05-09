@@ -1,6 +1,6 @@
 class SubscriptionsController < ApplicationController
     before_action :find_subscription, only: [:show, :update, :destroy]
-    before_action :admin_authorize, only: :index
+    # before_action :admin_authorize, only: :index
 
     def create
         subscription = Subscription.create!(subscription_params)
@@ -27,9 +27,11 @@ class SubscriptionsController < ApplicationController
     end
 
     private
+
     def find_subscription
         @subscription = Subscription.find(params[:id])
     end
+
     def subscription_params
         params.permit(:user_id, :box_id, :duration)
     end

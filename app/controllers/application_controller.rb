@@ -4,8 +4,8 @@ class ApplicationController < ActionController::API
     rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     
-    before_action :user_authorize
-    
+    # before_action :user_authorize
+
     private
 
     #if current user is an admin, then authorize? or separate auth for admin actions?
@@ -23,7 +23,7 @@ class ApplicationController < ActionController::API
         render json: {errors: invalid.record.errors.full_messages}, status: 422
     end
     
-    def render_not_found unfound
+    def render_not_found 
         render json: {error: "#{controller_name.classify} not found"}, status: 404
     end
 
