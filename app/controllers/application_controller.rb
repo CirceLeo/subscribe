@@ -16,7 +16,7 @@ class ApplicationController < ActionController::API
 
     def admin_authorize
         @current_user = User.find(session[:user_id])
-        render json: { errors: ["Not Authorized"]}, status: :unauthorized unless @current_user.admin?
+        render json: { errors: ["Not Authorized"]}, status: :unauthorized unless @current_user.isAdmin
     end
     
     def render_invalid invalid

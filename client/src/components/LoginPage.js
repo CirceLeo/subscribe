@@ -1,13 +1,15 @@
 import Header from "./Header"
 import SignUpForm from "./SignUpForm"
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
+import { UserContext, userObject } from "../context/user";
 
 
 function LoginPage({}) {
 
     const navigate = useNavigate()
 
+    const [user, setUser] = useContext(UserContext)
     const [formData, setFormData] = useState({username: '', password: ''})
     const [showSignUp, setShowSignUp] = useState(false)
     const [errors, setErrors] = useState([]);
@@ -25,10 +27,10 @@ function LoginPage({}) {
         })
         .then( res => {
             if(res.ok){
-                res.json().then(user => {
+                res.json().then(userData => {
                     // goodLogin(user)
                     setErrors(null)
-                    console.log("logged in!")
+                    setUser(userData)
                     navigate('/')
                 })
             } else {

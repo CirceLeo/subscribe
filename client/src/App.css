@@ -83,3 +83,8 @@
 .button:hover {
   background: orange;
 }
+
+#welcome-user, #logo {
+  display: inline-block;
+  padding-left: 1.5em;
+}

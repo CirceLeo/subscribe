@@ -4,7 +4,7 @@ import { UserContext } from '../context/user'
 
 function UserBoxes(props) {
     const user = useContext(UserContext)
-    console.log("usercontext: ", user)
+    // console.log("usercontext: ", user[0].isAdmin)
     
     return (
         <div>
