@@ -1,11 +1,10 @@
-import BoxListItem from './BoxListItem'; 
 import { useState } from "react";
+import BoxListItem from './BoxListItem'; 
 import BoxDetail from './BoxDetail';
 import CheckoutForm from './CheckoutForm';
 
 
 function BoxesList({ boxInfo }) {
-
 
     const [modalOpen, setModalOpen] = useState(false);
     const [currentBox, setCurrentBox] = useState(5765764);

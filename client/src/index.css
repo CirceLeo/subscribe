@@ -41,7 +41,7 @@ body{
   transition: 1s;
 }
 
-.checkout, .box-detail {
+.checkout, .box-detail, .user-edit-sub {
   padding: .5em;
 }
 
