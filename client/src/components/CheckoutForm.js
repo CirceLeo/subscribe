@@ -5,6 +5,10 @@ function CheckoutForm(props) {
         <div>
             <Header />
             <h1>Checkout</h1>
+            <form>
+                <label>Length of subscription</label>
+                <input type="number" />
+            </form>
         </div>
     )
 }

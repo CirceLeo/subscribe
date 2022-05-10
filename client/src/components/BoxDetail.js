@@ -19,6 +19,7 @@ function BoxDetail({ closeModal, boxId }) {
     return (
         <div>
             <button onClick={closeModal} className="close-button">&times;</button>
+            {console.log(viewBox)}
             <h2>Title: {viewBox.title}</h2>
             <h3>Price: {viewBox.price}</h3>
             <h3>Items: {viewBox.items}</h3>
