@@ -60,4 +60,14 @@ body{
   background-color: antiquewhite;
   border-radius: 5em;
   text-align: center;
+  width: 70vw;
+  left: 50%;
+}
+
+.signup_form label {
+  margin-right: .5em;
+}
+
+.signup_form input {
+  background-color: rgba(135, 209, 209, 0.5);
 }
