@@ -10,7 +10,7 @@ puts("making new")
         username: Faker::Name.name,
         password: "password",
         email: Faker::Internet.email,
-        admin?: false
+        isAdmin: false
         #fake a secured password? or just create one?
     )
 end
@@ -19,7 +19,7 @@ User.create(
     username: "ADMIN",
     password: "secret",
     email:"admin@admin.com",
-    admin?: true
+    isAdmin: true
 )
 
 10.times do

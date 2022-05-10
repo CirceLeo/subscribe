@@ -21,7 +21,7 @@ class User < ApplicationRecord
     private 
 
     def user_params
-        params.permit(:username, :password, :password_confirmation, :email, :admin?)
+        params.permit(:username, :password, :password_confirmation, :email, :isAdmin)
     end
 
 

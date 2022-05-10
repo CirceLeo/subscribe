@@ -6,9 +6,9 @@ const UserContext = createContext();
 const userObject = {}
 
 function UserProvider({children}) {
-    const [user, setUser] = useState(userObject)
+    const [currentUser, setCurrentUser] = useState(userObject)
 
-    return <UserContext.Provider value={userObject}>{children}</UserContext.Provider>;
+    return <UserContext.Provider value={[currentUser, setCurrentUser]}>{children}</UserContext.Provider>;
 }
 
 export { UserContext, UserProvider };

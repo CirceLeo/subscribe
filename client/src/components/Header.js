@@ -1,6 +1,12 @@
+import React, { useContext } from "react";
+import { UserContext } from "../context/user";
 import { Navigate, NavLink, useNavigate } from "react-router-dom"
 
 function Header(props) {
+
+    const user = useContext(UserContext)
+
+    console.log("from header: ", user[0].isAdmin)
 
     const navigateTo = useNavigate()
 
@@ -18,8 +24,9 @@ function Header(props) {
     
     return (
         <div className="header">
-            <h1>SubScrybe</h1>
+            <h1 id="logo">SubScrybe</h1>
             {/* if there's a current user, include welcome name */}
+            {user[0].username ? <h2 id="welcome-user">{`Welcome, ${user[0].username}`}</h2> : null}
             <div className="navLinks">
                 <NavLink to="/boxes" className={({ isActive }) => (isActive ? 'active' : 'inactive')}> All Boxes </NavLink>
                 <NavLink to="/myboxes" className={({ isActive }) => (isActive ? 'active' : 'inactive')}> See Your Subscriptions</NavLink>
