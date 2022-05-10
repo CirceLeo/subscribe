@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show, :update, :destroy]
-    # skip_before_action :user_authorize, only: :create
+    skip_before_action :user_authorize, only: :create
     # before_action :admin_authorize, only: :index
 
     def create

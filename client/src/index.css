@@ -32,18 +32,18 @@ body{
   transform: translate(0%);
 }
 
-.navLinks a {
+.navLinks a, .navLinks button {
   text-decoration: none;
-  margin: 1em;
+  margin: .5em;
   background-color: antiquewhite;
   border-radius: 5em;
   padding: .2em;
   transition: 1s;
 }
 
-.navLinks a:hover{
+.navLinks a:hover, .navLinks button:hover{
   text-decoration: none;
-  margin: 1em;
+  margin: .75em;
   background-color: rgb(153, 136, 114);
   border-radius: 5em;
   padding: .2em;
