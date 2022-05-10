@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         # end
         #authenticating a logged in user
         if @user
-            render json: @user, status: :ok
+            render json: @user, include: ['subscriptions', 'subscriptions.box'], status: :ok
         else
             render json: {message: "No user logged in"}, status: :unauthorized
         end

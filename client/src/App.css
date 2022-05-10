@@ -8,7 +8,7 @@
   flex-wrap: wrap;
 }
 
-.box-items {
+.box-items, .userSubscription {
   margin-left: 10em;
   float: left;
   text-align: center;

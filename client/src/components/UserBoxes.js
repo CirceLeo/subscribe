@@ -12,12 +12,18 @@ function UserBoxes(props) {
         .then(updatedUser  => setUser(updatedUser) 
     )}, [])
 
+    console.log(user)
+
     const renderedSubscriptions = user.subscriptions.map(sub => {
         console.log(sub)
         return (
             <div className="userSubscription">
-                {/* <h4>{ sub}</h4> */}
-                <h3>{sub.duration}</h3>
+                {/* <p>things be breaking</p> */}
+                <h3>{sub.box.title}</h3>
+                <p>{sub.box.description}</p>
+                <p>Current duration: {sub.duration}</p>
+                <p>TO CHANGE - remaining time</p>
+                <button>Edit this subscription?</button>
             </div>
         )
     })
@@ -26,6 +32,11 @@ function UserBoxes(props) {
         <div>
             <Header />
         <h1>My Subscriptions</h1>
+        <div className="user-sub-summary">
+            <h4>Summary:</h4>
+            {/* <p><strong>Number of subscriptions:</strong> {renderedSubscriptions.length}</p>
+            <p><strong>Total monthly cost:</strong>{user.subscriptions.sum(sub => sub.box.price)}</p> */}
+        </div>
         {renderedSubscriptions.length > 0 ? renderedSubscriptions : <p>You have no current subscriptions, sad!</p>}
         </div>
     )
