@@ -1,4 +1,5 @@
 // import Header from "./Header"
+//import use context things
 import {useState, useEffect} from 'react'
 
 function CheckoutForm({closeModal, setModalCheckout, boxId}) {
@@ -12,17 +13,32 @@ function CheckoutForm({closeModal, setModalCheckout, boxId}) {
         .catch( error => console.log(error.message));
     }, [])
 
-    function handleSubmit(e){
-        e.preventDefault()
-    }
-
+    
     function handleDurationChange(e){
         setInputDuration(e.target.value)
     }
-
+    
     function handleExitClick(){
         closeModal()
         setModalCheckout(false)
+    }
+    function handleSubmit(e){
+        e.preventDefault()
+        fetch(`http://localhost:4000/subscriptions`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({
+                // user_id: user.id,
+                box_id: viewBox.id,
+                duration: inputDuration
+            })
+        })
+        .then( res => res.json())
+        .then( data => console.log(data))
+        .catch( error => console.log(error.message));
     }
 
     return (
