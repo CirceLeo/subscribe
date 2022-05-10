@@ -22,7 +22,7 @@ function BoxesList({ boxInfo }) {
     }
     
     return (
-        <div>
+        <div className='flex'>
             {
                 modalOpen && (
                     <>
