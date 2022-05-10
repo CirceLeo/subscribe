@@ -16,8 +16,8 @@ class SessionsController < ApplicationController
     def destroy
         if session[:user_id]
             session.delete :user_id
-            # head :no_content
-            render json: {}, status: 204
+            head :no_content
+            # render json: {}, status: 204
         else
             render json: {errors: ["No user currently logged in"]}, status: 401
         end

@@ -5,6 +5,8 @@ User.delete_all
 
 puts("making new")
 
+User.create(username: "thomas", password: "pass", email: "fakeemail@fake.com", isAdmin: false)
+
 10.times do 
     User.create(
         username: Faker::Name.name,
