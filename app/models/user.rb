@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
 
-    has_many :subscriptions
+    has_many :subscriptions, dependent: :destroy
     has_many :boxes, through: :subscriptions
 
     validates :username, presence: true, uniqueness: true

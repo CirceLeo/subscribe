@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom'
 
 function CheckoutForm({closeModal, setModalCheckout, boxId}) {
     const [viewBox, setViewBox] = useState({});
-    const [inputDuration, setInputDuration] = useState(0)
+    const [inputDuration, setInputDuration] = useState(1)
     const [user] = useContext(UserContext)
     const navigate = useNavigate()
     // console.log("checkout form user", user)
@@ -57,7 +57,7 @@ function CheckoutForm({closeModal, setModalCheckout, boxId}) {
             {/* box info */}
             <form onSubmit={handleSubmit}>
                 <label>How many months?</label>
-                <input onChange={handleDurationChange} name="duration" type="number" min={0} max={12} value={inputDuration} />
+                <input onChange={handleDurationChange} name="duration" type="number" min={1} max={12} value={inputDuration} />
                 <br/>
                 <p>Total Cost: $ {viewBox.price * inputDuration}</p>
                 <br/>
