@@ -41,6 +41,11 @@ body{
   transition: 1s;
 }
 
+.checkout, .box-detail {
+  padding: .5em;
+}
+
+
 .navLinks a:hover, .navLinks button:hover{
   text-decoration: none;
   margin: .75em;

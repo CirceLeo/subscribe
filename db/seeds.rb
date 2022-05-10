@@ -25,7 +25,7 @@ User.create(
 10.times do
     Box.create(
         title: Faker::Marketing.buzzwords,
-        price: rand(4.0..30.0),
+        price: rand(4.0..30.0).round(2),
         items: "Ice, Bourbon, Lemon Peel",
         description: Faker::Movie.quote,
         image_url: "https://www.celladorales.com/wp-content/uploads/2016/12/ShippingBox_sq.jpg"

@@ -34,7 +34,7 @@ function BoxesList({ boxInfo }) {
                         
                     {/* <main className="modal__main"> */}
                         {modalCheckout ? 
-                            <CheckoutForm modalCheckout={modalCheckout} closeModal={closeModal} boxId={currentBox} setModalCheckout={setModalCheckout}/> :
+                            <CheckoutForm closeModal={closeModal} boxId={currentBox} setModalCheckout={setModalCheckout}/> :
                             <BoxDetail closeModal={closeModal} boxId={currentBox} setModalCheckout={setModalCheckout} /> 
                         }
                     {/* </main> */}

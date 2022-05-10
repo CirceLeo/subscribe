@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+// import {useNavigate} from 'react-router-dom';
 
 
 function BoxDetail({ closeModal, boxId, setModalCheckout }) {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [viewBox, setViewBox] = useState({});
 
     useEffect(() => {
@@ -17,14 +17,15 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
     
     
     return (
-        <div>
+        <div className='box-detail'>
             <button onClick={closeModal} className="close-button">&times;</button>
-            {console.log(viewBox)}
+            {/* {console.log(viewBox)} */}
             <h2>Title: {viewBox.title}</h2>
-            <h3>Price: {viewBox.price} per month</h3>
+            <h3>Price: $ {viewBox.price} per month</h3>
             <h3>Items: {viewBox.items}</h3>
             <h3>Description: {viewBox.description}</h3>
             {/* conditional if user or say to log in */}
+            <label>Like the look of this box? Subscribe! </label>
             <button onClick={() => setModalCheckout(true)}>Checkout here</button>
         </div>
     )
