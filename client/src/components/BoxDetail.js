@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from "../context/user";
+import { useNavigate } from "react-router-dom";
 // import {useNavigate} from 'react-router-dom';
 
 
 function BoxDetail({ closeModal, boxId, setModalCheckout }) {
 
-    // const navigate = useNavigate();
+    let navigateTo = useNavigate();
+
+    const user = useContext(UserContext);
+    // console.log("from boxdetail: ", user)
     const [viewBox, setViewBox] = useState({});
 
     useEffect(() => {
@@ -25,8 +30,19 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
             <h3>Items: {viewBox.items}</h3>
             <h3>Description: {viewBox.description}</h3>
             {/* conditional if user or say to log in */}
-            <label>Like the look of this box? </label>
-            <button onClick={() => setModalCheckout(true)}>Subscribe here!</button>
+            {
+            
+            user[0].username ?
+            <>
+            <label>Like the look of this box? Subscribe! </label>
+            <button onClick={() => setModalCheckout(true)}>Checkout here</button>
+            </>
+            :
+            <>
+            <label>Like the look of this box? Login to Subscribe! </label>
+            <button onClick={() => navigateTo("/login")}>Login</button>
+            </>
+            }
         </div>
     )
 }

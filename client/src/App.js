@@ -8,6 +8,7 @@ import LoginPage from './components/LoginPage';
 import CheckoutForm from './components/CheckoutForm';
 import AdminBoxes from './components/AdminBoxes';
 import UserBoxes from './components/UserBoxes';
+import LoggingOut from './components/LoggingOut';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route path='/editboxes' element={<AdminBoxes/>} />
          <Route path='/checkout' element={<CheckoutForm/>} />
          <Route path='/myboxes' element={<UserBoxes/>} />
+         <Route path="/loggingout" element={<LoggingOut />} />
        </Routes>
       </Router>
     </UserProvider>
