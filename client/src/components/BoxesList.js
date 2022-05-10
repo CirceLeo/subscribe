@@ -1,6 +1,7 @@
 import BoxListItem from './BoxListItem'; 
 import { useState } from "react";
 import BoxDetail from './BoxDetail';
+import CheckoutForm from './CheckoutForm';
 
 
 function BoxesList({ boxInfo }) {
@@ -8,6 +9,7 @@ function BoxesList({ boxInfo }) {
 
     const [modalOpen, setModalOpen] = useState(false);
     const [currentBox, setCurrentBox] = useState(5765764);
+    const [modalCheckout, setModalCheckout] = useState(false)
 
     const renderedBoxes = boxInfo.map((box) => {
         return <BoxListItem key={box.id} box={box} openModal={openModal}/>
@@ -31,7 +33,10 @@ function BoxesList({ boxInfo }) {
                     <div className="modal">
                         
                     {/* <main className="modal__main"> */}
-                        <BoxDetail closeModal={closeModal} boxId={currentBox}/>
+                        {modalCheckout ? 
+                            <CheckoutForm modalCheckout={modalCheckout} closeModal={closeModal} boxId={currentBox} setModalCheckout={setModalCheckout}/> :
+                            <BoxDetail closeModal={closeModal} boxId={currentBox} setModalCheckout={setModalCheckout} /> 
+                        }
                     {/* </main> */}
                     </div>
                     </>

@@ -1,14 +1,21 @@
 import Header from "./Header"
-function CheckoutForm(props) {
+function CheckoutForm({closeModal, setModalCheckout, modalCheckout}) {
     //need to get the box id somehow
     //get id info from the routing??
 
     function handleSubmit(e){
         e.preventDefault()
     }
+
+    function handleExitClick(){
+        closeModal()
+        setModalCheckout(false)
+        console.log(modalCheckout)
+    }
     return (
         <div>
-            <Header />
+            <button onClick={handleExitClick} className="close-button">&times;</button>
+            {/* <Header /> */}
             <h1>Checkout</h1>
             {/* box info */}
             <form onSubmit={handleSubmit}>
