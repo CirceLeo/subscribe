@@ -15,11 +15,11 @@ function BoxesList({ boxInfo }) {
     function openModal(e, boxId) {
         setModalOpen(true)
         setCurrentBox(boxId)
-      }
+    }
     
-      function closeModal(){
+    function closeModal(){
         setModalOpen(false)
-      }
+    }
     
     return (
         <div>

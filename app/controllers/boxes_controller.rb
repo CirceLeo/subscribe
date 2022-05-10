@@ -34,6 +34,6 @@ class BoxesController < ApplicationController
         @box = Box.find(params[:id])
     end
     def box_params
-        params.permit(:price, :title, :description, :items)
+        params.permit(:price, :title, :description, :items, :image_url)
     end
 end
