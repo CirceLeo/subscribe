@@ -5,6 +5,7 @@ import BoxDetail from './BoxDetail';
 
 function BoxesList({ boxInfo }) {
 
+
     const [modalOpen, setModalOpen] = useState(false);
     const [currentBox, setCurrentBox] = useState(5765764);
 
