@@ -24,16 +24,13 @@ function SignUpForm() {
 
     function handleSubmit(e){
         e.preventDefault()
-        // console.log(formData)
         fetch(`http://localhost:4000/users`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
-            body: JSON.stringify({
-                formData
-            })
+            body: JSON.stringify(formData)
         })
         .then( res => 
             {
@@ -41,12 +38,11 @@ function SignUpForm() {
                     res.json().then(user => {
                         setErrors(null)
                         console.log(user)
-                        // alert("Welcome! Check out some boxes!")
-                        // navigate('/boxes')
+                        alert("Welcome! Check out some boxes!")
+                        navigate('/boxes')
                     })
                 } else {
                     res.json().then(response => {
-                        // console.log(response)
                         setErrors(response.errors)
                         //add spaces etc to errors
                         setShowErrors(true)

@@ -43,7 +43,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        #pw digest? or pw and pw confirm?
         params.permit(:username, :password, :password_confirmation, :email, :admin?)
     end
 end
