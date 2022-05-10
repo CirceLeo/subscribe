@@ -13,23 +13,37 @@ code {
 } */
 
 .header {
-  background-color: aqua;
+  /* background-color: aqua; */
+  background-image: linear-gradient(to right, aqua, teal);
   text-align: center;
   border: .2em solid black;
-  padding: .5em;
+  padding: .2em;
+  position: fixed;
+  width: 90vw;
+  top: .5em;
+  height: 7em;
 }
 
-.navLinks a{
+body{
+  padding-top: 7.2em;
+}
+
+.centered {
+  transform: translate(0%);
+}
+
+.navLinks a, .navLinks button {
   text-decoration: none;
-  margin: 1em;
+  margin: .5em;
   background-color: antiquewhite;
   border-radius: 5em;
   padding: .2em;
+  transition: 1s;
 }
 
-.navLinks a:hover{
+.navLinks a:hover, .navLinks button:hover{
   text-decoration: none;
-  margin: 1em;
+  margin: .75em;
   background-color: rgb(153, 136, 114);
   border-radius: 5em;
   padding: .2em;
@@ -37,10 +51,23 @@ code {
 
 .active {
   color: red;
+  /* background-color: pink; */
 }
+
+
 
 .signup_form {
   background-color: antiquewhite;
   border-radius: 5em;
   text-align: center;
+  width: 70vw;
+  left: 50%;
+}
+
+.signup_form label {
+  margin-right: .5em;
+}
+
+.signup_form input {
+  background-color: rgba(135, 209, 209, 0.5);
 }

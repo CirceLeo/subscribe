@@ -10,6 +10,7 @@ function UserBoxes(props) {
         <div>
             <Header />
         <h1>My Boxes</h1>
+        {/* <BoxesList boxInfo={userBoxes} /> */}
         </div>
     )
 }

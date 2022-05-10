@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show, :update, :destroy]
-    validates :password, confirmation: true
-    # skip_before_action :user_authorize, only: :create
+    skip_before_action :user_authorize, only: :create
     # before_action :admin_authorize, only: :index
 
     def create
@@ -44,7 +43,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        #pw digest? or pw and pw confirm?
-        parmas.permit(:username, :password, :password_confirmation, :email, :admin?)
+        params.permit(:username, :password, :password_confirmation, :email, :admin?)
     end
 end

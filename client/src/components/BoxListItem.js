@@ -6,7 +6,8 @@ function BoxListItem({ box, openModal }) {
         <div>
             <div className="box-items">
                 <h1>Title: {box.title}</h1>
-                <h4>Price: {box.price}</h4>
+                <img src={box.image_url} alt="picture of a box" />
+                <h4>Price: {box.price} per month</h4>
                 <h4>Description: {box.description}</h4>
                 <button onClick={(e) => openModal(e, box.id)}>View</button>
             </div>

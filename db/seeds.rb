@@ -27,7 +27,8 @@ User.create(
         title: Faker::Marketing.buzzwords,
         price: rand(4.0..30.0),
         items: "Ice, Bourbon, Lemon Peel",
-        description: Faker::Movie.quote
+        description: Faker::Movie.quote,
+        image_url: "https://www.celladorales.com/wp-content/uploads/2016/12/ShippingBox_sq.jpg"
     )
 end
 

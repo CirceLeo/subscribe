@@ -19,8 +19,9 @@ function BoxDetail({ closeModal, boxId }) {
     return (
         <div>
             <button onClick={closeModal} className="close-button">&times;</button>
+            {console.log(viewBox)}
             <h2>Title: {viewBox.title}</h2>
-            <h3>Price: {viewBox.price}</h3>
+            <h3>Price: {viewBox.price} per month</h3>
             <h3>Items: {viewBox.items}</h3>
             <h3>Description: {viewBox.description}</h3>
             <button onClick={() => navigate('/checkout')}>Checkout here</button>

@@ -1,14 +1,19 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
+const emptyFormObj = {
+    username: '',
+    email: '',
+    password: '',
+    password_confirm: ''
+}
 function SignUpForm() {
+
+    const navigate = useNavigate()
     
-    const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: '',
-        password_confirm: ''
-    })
+    const [formData, setFormData] = useState(emptyFormObj)
+    const [errors, setErrors] = useState([]);
+    const [showErrors, setShowErrors] = useState(false)
 
     function handleFormChange(event){
         setFormData({
@@ -19,30 +24,43 @@ function SignUpForm() {
 
     function handleSubmit(e){
         e.preventDefault()
-        fetch(`http://localhost:3000/users`, {
+        fetch(`http://localhost:4000/users`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
-            body: JSON.stringify({
-                formData
-            })
+            body: JSON.stringify(formData)
         })
-        .then( res => res.json())
-        .then( data => console.log(data))
+        .then( res => 
+            {
+                if(res.ok){
+                    res.json().then(user => {
+                        setErrors(null)
+                        console.log(user)
+                        alert("Welcome! Check out some boxes!")
+                        navigate('/boxes')
+                    })
+                } else {
+                    res.json().then(response => {
+                        setErrors(response.errors)
+                        //add spaces etc to errors
+                        setShowErrors(true)
+                    })
+                }
+                setFormData(emptyFormObj)
+            }
+        //     res.json())
+        // .then( data => {
+        //     console.log(data)
+        )
         .catch( error => console.log(error.message));
-        setFormData({
-            username: '',
-            email: '',
-            password: '',
-            password_confirm: ''
-        })
     }
     return (
         <div className="signup_form">
             <h3>Welcome!</h3>
             <p>Fill out your details below to sign up:</p>
+            {showErrors ? <p className="signup_issues">{errors} <button onClick={() => setShowErrors(false)}>X</button></p> : null }
             <form onSubmit={handleSubmit}>
                 <label>username</label>
                 <input

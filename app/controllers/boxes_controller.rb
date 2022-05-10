@@ -3,7 +3,7 @@ class BoxesController < ApplicationController
     # before_action :admin_authorize, except: [:index, :show]
     # skip_before_action :admin_authorize, only: :index, :show
 
-    # skip_before_action :user_authorize #?
+    skip_before_action :user_authorize #?
 
     def create
         box = Box.create!(box_params)
@@ -34,6 +34,6 @@ class BoxesController < ApplicationController
         @box = Box.find(params[:id])
     end
     def box_params
-        params.permit(:price, :title, :description, :items)
+        params.permit(:price, :title, :description, :items, :image_url)
     end
 end

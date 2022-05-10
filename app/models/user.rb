@@ -5,6 +5,8 @@ class User < ApplicationRecord
     has_many :boxes, through: :subscriptions
 
     validates :username, presence: true, uniqueness: true
+    validates :password, confirmation: true
+
 
     def create
         user = User.create(user_params)
@@ -19,7 +21,7 @@ class User < ApplicationRecord
     private 
 
     def user_params
-        parmas.permit(:username, :password, :password_confirmation, :email, :admin?)
+        params.permit(:username, :password, :password_confirmation, :email, :admin?)
     end
 
 

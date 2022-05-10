@@ -57,7 +57,8 @@ function LoginPage({}) {
         <div>
             <Header />
             <h1>Login</h1>
-            {showErrors ? <p className="logon_issue">{errors} <button onClick={() => setShowErrors(false)}>X</button></p> : null }
+            {/* {change errors to snackbar/toast?} */}
+            {showErrors ? <p className="logon_issue">{errors} <button className="close-button" onClick={() => setShowErrors(false)}>X</button></p> : null }
 
             <form onSubmit={handleSubmit}>
                 <label>username</label>
@@ -80,7 +81,7 @@ function LoginPage({}) {
             </form>
 
             <br />
-
+            {/* cant apply X style cause it only applys to one version? */}
             <button onClick={toggleSignUpForm}>{showSignUp ? "X": "not a user? Sign Up!"}</button>
             {showSignUp ? <SignUpForm/> : null}
 
