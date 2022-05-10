@@ -1,10 +1,15 @@
 // import Header from "./Header"
 //import use context things
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
+import { UserContext } from "../context/user";
+import {useNavigate} from 'react-router-dom'
 
 function CheckoutForm({closeModal, setModalCheckout, boxId}) {
     const [viewBox, setViewBox] = useState({});
     const [inputDuration, setInputDuration] = useState(0)
+    const [user] = useContext(UserContext)
+    const navigate = useNavigate()
+    // console.log("checkout form user", user)
 
     useEffect(() => {
         fetch(`http://localhost:4000/boxes/${boxId}`)
@@ -31,13 +36,13 @@ function CheckoutForm({closeModal, setModalCheckout, boxId}) {
                 Accept: "application/json"
             },
             body: JSON.stringify({
-                // user_id: user.id,
+                user_id: user.id,
                 box_id: viewBox.id,
                 duration: inputDuration
             })
         })
         .then( res => res.json())
-        .then( data => console.log(data))
+        .then( navigate('/myboxes'))
         .catch( error => console.log(error.message));
     }
 

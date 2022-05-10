@@ -25,8 +25,8 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
             <h3>Items: {viewBox.items}</h3>
             <h3>Description: {viewBox.description}</h3>
             {/* conditional if user or say to log in */}
-            <label>Like the look of this box? Subscribe! </label>
-            <button onClick={() => setModalCheckout(true)}>Checkout here</button>
+            <label>Like the look of this box? </label>
+            <button onClick={() => setModalCheckout(true)}>Subscribe here!</button>
         </div>
     )
 }

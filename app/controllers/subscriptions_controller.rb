@@ -1,6 +1,7 @@
 class SubscriptionsController < ApplicationController
     before_action :find_subscription, only: [:show, :update, :destroy]
     # before_action :admin_authorize, only: :index
+    skip_before_action :user_authorize
 
     def create
         subscription = Subscription.create!(subscription_params)
