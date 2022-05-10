@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import Header from "./Header"
 import { UserContext } from '../context/user'
+import Header from "./Header"
 import UserEditBox from "./UserEditBox";
 
 function UserBoxes(props) {
