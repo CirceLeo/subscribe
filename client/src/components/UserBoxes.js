@@ -36,7 +36,7 @@ function UserBoxes(props) {
                 <p>{sub.box.description}</p>
                 <p>Current duration: {sub.duration}</p>
                 <p>TO CHANGE - remaining time</p>
-                <button onClick={openModal}>Edit this subscription?</button>
+                <button onClick={(e) => openModal(e, sub.id)}>Edit this subscription?</button>
             </div>
         )
     })
@@ -56,7 +56,7 @@ function UserBoxes(props) {
                     <div className="overlay"></div>
                     <div className="modal">
                         
-                        <UserEditBox closeModal={closeModal} />
+                        <UserEditBox closeModal={closeModal} curSub={currentSubscription} />
                     </div>
                     </>
                 )
