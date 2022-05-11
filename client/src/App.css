@@ -110,3 +110,7 @@
   50% { bottom: 0.2em; }
   100% { bottom: 0; opacity: 1; }
 }
+
+.form-label {
+  display: block;
+}
