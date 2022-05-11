@@ -58,12 +58,11 @@ function LoginPage({}) {
     return (
         <div>
             <Header />
+            <form className="login-form" onSubmit={handleSubmit}>
             <h1>Login</h1>
             {/* {change errors to snackbar/toast?} */}
             {showErrors ? <p className="logon-issue">{errors} <button className="close-button" onClick={() => setShowErrors(false)}>X</button></p> : null }
-
-            <form onSubmit={handleSubmit}>
-                <label>username</label>
+                <label>username: </label>
                 <input 
                     type="text"
                     value={formData.username}
@@ -72,7 +71,7 @@ function LoginPage({}) {
                 />
                 <br/>
                 <br/>
-                <label>password</label>
+                <label>password: </label>
                 <input 
                     type="password"
                     value={FormData.password}
@@ -80,12 +79,12 @@ function LoginPage({}) {
                     name="password"
                 />
                 <br/>
-                <button type="submit">login</button>
+                <button className="modal-button" type="submit">login</button>
             </form>
 
             <br />
             {/* cant apply X style cause it only applys to one version? */}
-            <button onClick={toggleSignUpForm}>{showSignUp ? "X": "not a user? Sign Up!"}</button>
+            <button className="modal-button" onClick={toggleSignUpForm}>{showSignUp ? "X": "not a user? Sign Up!"}</button>
             {showSignUp ? <SignUpForm/> : null}
 
         </div>

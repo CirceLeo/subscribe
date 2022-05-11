@@ -103,20 +103,21 @@ body {
 .close-button {
   border: none;
   background: transparent;
-  padding: 10px;
+  padding: .5em;
   cursor: pointer;
   color: red;
-  font-size: 36px;
+  font-size: 1.5em;
   border-radius: 15em;
   transition: 1s;
 
 }
 
 .checkout-issue, .logon-issue{
-  background-color: rgb(109, 72, 72);
-  color: red;
+  background-color: #FFBF47;
+  color: #BA262B;
   width: fit-content;
   border-radius: 5px;
+  font-size: 1.1em;
 }
 
 .close-button:hover {

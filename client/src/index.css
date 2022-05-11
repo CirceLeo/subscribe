@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
-
+*{
+  font-family:'Dosis', sans-serif;
+}
 .header {
   /* background-color: aqua; */
   background-image: linear-gradient(to right, aqua, teal);
@@ -67,18 +69,25 @@ body{
 
 
 
-.signup_form {
-  background-color: antiquewhite;
+.signup_form, .login-form {
+  /* background-color: antiquewhite; */
+  background-image: linear-gradient(#FFE1A8,#981F23);
   border-radius: 5em;
   text-align: center;
   width: 70vw;
-  left: 50%;
+  /* left: 50%; */
+}
+
+.login-form button {
+  padding: .5em;
+  margin: .5em;
 }
 
 .signup_form label {
   margin-right: .5em;
 }
 
-.signup_form input {
-  background-color: rgba(135, 209, 209, 0.5);
+.signup_form input, .login-form input {
+  background-color: #BA262B;
+  color: antiquewhite;
 }
