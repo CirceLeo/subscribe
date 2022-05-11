@@ -18,6 +18,10 @@ class User < ApplicationRecord
         end
     end
 
+    def total_box_cost
+        self.boxes.sum(:price)
+    end
+
     private 
 
     def user_params

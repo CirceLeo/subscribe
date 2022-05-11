@@ -31,7 +31,7 @@ function LoginPage({}) {
                     // goodLogin(user)
                     setErrors(null)
                     setUser(userData)
-                    navigate('/')
+                    navigate('/boxes')
                 })
             } else {
                 res.json().then(response => {

@@ -54,6 +54,11 @@ body{
   padding: .2em;
 }
 
+.edit-sub-form{
+  background-color: antiquewhite;
+  width: 2.5em;
+}
+
 .active {
   color: red;
   /* background-color: pink; */

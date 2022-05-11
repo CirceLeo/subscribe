@@ -1,16 +1,22 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
+import { UserContext, userObject } from "../context/user";
+
 
 const emptyFormObj = {
     username: '',
     email: '',
     password: '',
-    password_confirm: ''
+    password_confirm: '',
+    isAdmin: false
 }
 function SignUpForm() {
 
+    
+    
     const navigate = useNavigate()
     
+    const [user, setUser] = useContext(UserContext)
     const [formData, setFormData] = useState(emptyFormObj)
     const [errors, setErrors] = useState([]);
     const [showErrors, setShowErrors] = useState(false)
@@ -35,9 +41,10 @@ function SignUpForm() {
         .then( res => 
             {
                 if(res.ok){
-                    res.json().then(user => {
+                    res.json().then(newUser => {
                         setErrors(null)
-                        console.log(user)
+                        console.log(newUser)
+                        setUser(newUser)
                         alert("Welcome! Check out some boxes!")
                         navigate('/boxes')
                     })
