@@ -36,6 +36,7 @@ function App() {
           <Route path='/myboxes' element={<UserBoxes/>} />
           <Route path="/loggingout" element={<Loading message={"Logging Out..."} destination={'/boxes'}/>} />
           <Route path="/subscribing" element={<Loading message={"Subscribed! Loading your subscriptions"} destination={'/myboxes'}/>} />
+          <Route path="/updating" element={<Loading message={"Updating your changes..."} destination={'/editboxes'}/>} />
         </Routes>
       </Router>
     </UserProvider>
