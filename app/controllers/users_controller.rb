@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show, :update, :destroy]
+
     skip_before_action :user_authorize, only: :create
     # before_action :admin_authorize, only: :index
 
@@ -10,16 +11,22 @@ class UsersController < ApplicationController
     end
 
     def show
-        # if params[:id]
-        #     user = User.find(params[:id])
-        #     render json: user
-        # end
-        #authenticating a logged in user
-        if @user
-            render json: @user, include: ['subscriptions', 'subscriptions.box'], status: :ok
+        if session[:user_id]
+            render json: @current_user, include: ['subscriptions', 'subscriptions.box'], status: :ok
         else
-            render json: {message: "No user logged in"}, status: :unauthorized
+            render json: {message: "#{session[:user_id]}"}
         end
+        #     user = User.find(session[:user_id])
+        #     render json: user, include: ['subscriptions', 'subscriptions.box'], status: :ok
+        # else 
+        #     render json: {message: "No user logged in"}, status: :unauthorized
+        # end
+        # #authenticating a logged in user
+        # if @user
+        #     render json: @user, include: ['subscriptions', 'subscriptions.box'], status: :ok
+        # else
+        #     render json: {message: "No user logged in"}, status: :unauthorized
+        # end
     end
 
     def index

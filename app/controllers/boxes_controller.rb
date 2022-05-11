@@ -3,7 +3,7 @@ class BoxesController < ApplicationController
     # before_action :admin_authorize, except: [:index, :show]
     # skip_before_action :admin_authorize, only: :index, :show
 
-    skip_before_action :user_authorize #?
+    skip_before_action :user_authorize, only: [:index, :show]
 
     def create
         box = Box.create!(box_params)

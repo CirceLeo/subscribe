@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
     skip_before_action :user_authorize, only: :create
-    #does this mean you can't access unless you're a user cause no thank you
 
     def create
         user = User.find_by(username: params[:username])

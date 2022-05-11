@@ -5,12 +5,13 @@ class ApplicationController < ActionController::API
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     
     before_action :user_authorize
+    # before_action :admin_authorize 
 
     private
 
     #if current user is an admin, then authorize? or separate auth for admin actions?
     def user_authorize
-        @current_user = User.find(session[:user_id])
+        @current_user = User.find_by(id: session[:user_id])
         render json: { errors: ["Not Authorized"]}, status: :unauthorized unless @current_user
     end
 
@@ -26,7 +27,5 @@ class ApplicationController < ActionController::API
     def render_not_found 
         render json: {error: "#{controller_name.classify} not found"}, status: 404
     end
-
-
 
 end

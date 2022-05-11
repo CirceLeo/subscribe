@@ -30,7 +30,7 @@ function UserBoxes(props) {
     const renderedSubscriptions = user.subscriptions.map(sub => {
         // console.log(sub)
         return (
-            <div className="userSubscription">
+            <div key={sub.id} className="userSubscription">
                 {/* <p>things be breaking</p> */}
                 <h3>{sub.box.title}</h3>
                 <p>{sub.box.description}</p>

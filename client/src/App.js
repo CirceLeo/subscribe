@@ -1,31 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
-import {useState, useEffect} from "react";
-import { UserProvider } from './context/user';
+// import { UserProvider } from './context/user';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import BoxesPage from './components/BoxesPage';
 import LoginPage from './components/LoginPage';
 import CheckoutForm from './components/CheckoutForm';
 import AdminBoxes from './components/AdminBoxes';
 import UserBoxes from './components/UserBoxes';
-import LoggingOut from './components/Loading';
 import Loading from './components/Loading';
+import {useState, useEffect, useContext} from "react";
+import { UserContext } from "./context/user";
 
 function App() {
 
+  const [user, setUser] = useContext(UserContext)
 
-  // const [user, setUser] = useState(null)
-
-  // fetch("http://localhost:3000/me")
-  // .then(res => {
-  //   if (res.ok) {
-  //     res.json.then(user => setUser(user))
-  //   }
-  // }, [])
+  useEffect( () => {
+    fetch("/me")
+    .then(res => {
+      if (res.ok) {
+        console.log(res)
+        res.json.then(user => setUser(user))
+      }
+      else {
+        console.log("fetch failed")
+      }
+    })}, []) 
 
 
   return (
-    <UserProvider>
+    // <UserProvider>
       <Router>
         <Routes>
           <Route path='/' element={<BoxesPage/>} />
@@ -38,7 +41,7 @@ function App() {
           <Route path="/subscribing" element={<Loading message={"Subscribed! Loading your subscriptions"} destination={'/myboxes'}/>} />
         </Routes>
       </Router>
-    </UserProvider>
+    // </UserProvider>
 
 
   );
