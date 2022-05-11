@@ -35,7 +35,7 @@ function LoginPage({}) {
                 })
             } else {
                 res.json().then(response => {
-                    console.log(response.error)
+                    // console.log(response.error)
                     setErrors(response.error)
                     setShowErrors(true)
                 })
@@ -60,7 +60,7 @@ function LoginPage({}) {
             <Header />
             <h1>Login</h1>
             {/* {change errors to snackbar/toast?} */}
-            {showErrors ? <p className="logon_issue">{errors} <button className="close-button" onClick={() => setShowErrors(false)}>X</button></p> : null }
+            {showErrors ? <p className="logon-issue">{errors} <button className="close-button" onClick={() => setShowErrors(false)}>X</button></p> : null }
 
             <form onSubmit={handleSubmit}>
                 <label>username</label>

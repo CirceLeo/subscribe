@@ -8,6 +8,8 @@ function CheckoutForm({closeModal, setModalCheckout, boxId}) {
     const [viewBox, setViewBox] = useState({});
     const [inputDuration, setInputDuration] = useState(1)
     const [user] = useContext(UserContext)
+    const [errors, setErrors] = useState('')
+    const [showErrors, setShowErrors] = useState(false)
     const navigate = useNavigate()
     // console.log("checkout form user", user)
 
@@ -41,8 +43,18 @@ function CheckoutForm({closeModal, setModalCheckout, boxId}) {
                 duration: inputDuration
             })
         })
-        .then( res => res.json())
-        .then( navigate('/myboxes'))
+        .then(res => {
+            if(res.ok){
+                navigate('/subscribing')
+            } else{
+                res.json().then(recieved => {
+                    setErrors(recieved.errors)
+                    setShowErrors(true)
+                })
+            }
+        })
+        // .then( res => if() res.json())
+        // .then( navigate('/myboxes'))
         .catch( error => console.log(error.message));
     }
 
@@ -54,7 +66,7 @@ function CheckoutForm({closeModal, setModalCheckout, boxId}) {
             <p>Price: $ {viewBox.price} per month</p>
             <p>Items: {viewBox.items}</p>
             <p>Description: {viewBox.description}</p>
-            {/* box info */}
+            {showErrors ? <> <h3 className='checkout-issue'>{errors}</h3> <button className="close-button" onClick={() => setShowErrors(false)}>X</button> </> : null}
             <form onSubmit={handleSubmit}>
                 <label>How many months?</label>
                 <input onChange={handleDurationChange} name="duration" type="number" min={1} max={12} value={inputDuration} />
@@ -62,7 +74,6 @@ function CheckoutForm({closeModal, setModalCheckout, boxId}) {
                 <p>Total Cost: $ {viewBox.price * inputDuration}</p>
                 <br/>
                 <button type="submit" >Subscribe!</button>
-
             </form>
         </div>
     )

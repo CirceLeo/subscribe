@@ -53,7 +53,7 @@ function Header(props) {
                 }
 
                 {user.username || user.isAdmin ?
-                <button onClick={handleLogOut}>Log Out</button>
+                <button className="fake-header-link" onClick={handleLogOut}>Log Out</button>
                 :
                 null
                 }

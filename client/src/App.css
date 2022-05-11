@@ -66,6 +66,13 @@
 
 }
 
+.checkout-issue, .logon-issue{
+  background-color: rgb(109, 72, 72);
+  color: red;
+  width: fit-content;
+  border-radius: 5px;
+}
+
 .close-button:hover {
   background-color: red;
   color: #fff;

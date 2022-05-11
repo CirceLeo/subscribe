@@ -1,12 +1,12 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
 
-function Loading({message}) {
+function Loading({message, destination}) {
 
     let navigateTo = useNavigate();
 
     function navigateFunction() {
-        navigateTo("/boxes");
+        navigateTo(destination);
     }
 
     setTimeout(navigateFunction, 1500)
