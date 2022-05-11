@@ -24,7 +24,7 @@ function BoxesList({ boxInfo }) {
     }
     
     return (
-        <div className='flex'>
+        <>
             <div className="boxes-search">
                 <form>
                 <label>Search for Boxes: </label>
@@ -35,6 +35,7 @@ function BoxesList({ boxInfo }) {
                     />
                 </form>
             </div>
+        <div className='flex'>
             {
                 modalOpen && (
                     <>
@@ -53,6 +54,7 @@ function BoxesList({ boxInfo }) {
             }
             {renderedBoxes}
         </div>
+        </>
     )
 }
 export default BoxesList

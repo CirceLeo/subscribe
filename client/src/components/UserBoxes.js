@@ -34,10 +34,11 @@ function UserBoxes(props) {
             <div key={sub.id} className="userSubscription">
                 {/* <p>things be breaking</p> */}
                 <h3>{sub.box.title}</h3>
+                <img src={sub.box.image_url} alt="picture of a box" className="box-pic"/>
                 <p> Total subscription length: {sub.duration} {sub.duration > 1 ? "months" : "month"} </p>
                 <p>subscription started: {date.toLocaleDateString("en-US")}</p>
                 <p>remaining deliveries in your subscription: {sub.remaining_boxes}</p>
-                <button onClick={(e) => openModal(e, sub.id)}>Edit this subscription?</button>
+                <button className="modal-button" onClick={(e) => openModal(e, sub.id)}>Edit this subscription?</button>
             </div>
         )
     })

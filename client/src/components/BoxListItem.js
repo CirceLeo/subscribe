@@ -5,11 +5,11 @@ function BoxListItem({ box, openModal }) {
     return (
         <div>
             <div className="box-items">
-                <h1>Title: {box.title}</h1>
-                <img src={box.image_url} alt="picture of a box" />
-                <h4>Price: $ {box.price.toFixed(2)} per month</h4>
-                <h4>Description: {box.description}</h4>
-                <button onClick={(e) => openModal(e, box.id)}>View</button>
+                <h1>{box.title}</h1>
+                <img src={box.image_url} alt="picture of a box" className="box-pic"/>
+                <p> <strong> Price: </strong> $ {box.price.toFixed(2)} per month</p>
+                <p><strong> Description: </strong>{box.description}</p>
+                <button onClick={(e) => openModal(e, box.id)}>View Details</button>
             </div>
         </div>
     )

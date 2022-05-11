@@ -73,7 +73,7 @@ function CheckoutForm({closeModal, setModalCheckout, boxId}) {
                 <br/>
                 <p>Total Cost: $ {viewBox.price * inputDuration}</p>
                 <br/>
-                <button type="submit" >Subscribe!</button>
+                <button className="modal-button" type="submit" >Subscribe!</button>
             </form>
         </div>
     )
