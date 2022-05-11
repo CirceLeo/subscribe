@@ -71,7 +71,8 @@ body{
 
 .signup_form, .login-form {
   /* background-color: antiquewhite; */
-  background-image: linear-gradient(#FFE1A8,#981F23);
+  background-image: linear-gradient(#EA9A9D, #C1292E, #721d20);
+  /* background-color: #BA262B; */
   border-radius: 5em;
   text-align: center;
   width: 70vw;
