@@ -36,12 +36,12 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
             user[0].username ?
             <>
             <label>Like the look of this box? Subscribe! </label>
-            <button onClick={() => setModalCheckout(true)}>Checkout here</button>
+            <button className='modal-button' onClick={() => setModalCheckout(true)}>Checkout here</button>
             </>
             :
             <>
             <label>Like the look of this box? Login to Subscribe! </label>
-            <button onClick={() => navigateTo("/login")}>Login</button>
+            <button className="modal-button" onClick={() => navigateTo("/login")}>Login</button>
             </>
             }
         </div>

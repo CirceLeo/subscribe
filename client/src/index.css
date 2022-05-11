@@ -12,6 +12,7 @@
   height: 7em;
 }
 
+
 body{
   padding-top: 8.5em;
 }
@@ -20,7 +21,7 @@ body{
   transform: translate(0%);
 }
 
-.navLinks a, .fake-header-link{
+.navLinks a, .fake-header-link, .modal-button {
   text-decoration: none;
   margin: .5em;
   margin-top: 0em;
@@ -38,7 +39,7 @@ body{
 }
 
 
-.navLinks a:hover, .fake-header-link:hover, .navLinks button:hover{
+.navLinks a:hover, .fake-header-link:hover, .navLinks button:hover, .modal-button:hover{
   text-decoration: none;
   margin: .75em;
   background-color: rgb(153, 136, 114);
@@ -54,6 +55,14 @@ body{
 .active {
   color: red;
   /* background-color: pink; */
+}
+
+.loading-page img {
+    border: 2px solid #6A8D73;
+    border-radius: 5em;
+    top: 50%;
+    left: 50%;
+    /* transform: translateX(-50%) translateY(-50%); */
 }
 
 

@@ -2,6 +2,21 @@
   width: 90%;
 }
 
+/* * {
+  background-color: #EA9A9D;
+} */
+
+body {
+  background-color: #C1292E;
+}
+
+.box-pic {
+  width: 80%;
+  height: auto;
+  margin: 1em;
+  border-radius: 4em;
+}
+
 
 .flex {
   display: flex;
@@ -12,12 +27,43 @@
   margin-left: 10em;
   float: left;
   text-align: center;
-  border: grey solid 1px;
+  justify-content: center;
+  /* background-color: pink; */
+  background-image: linear-gradient(#EA9A9D, #C1292E);
+  /* border: grey solid 1px; */
   padding: 1rem;
   width: 15rem;
   height: 25rem;
   display: inline-grid;
   margin: 1rem 2rem;
+  border-radius: 1em;
+}
+
+.box-items p, .box-items h1, .userSubscription p {
+  padding: .01em;
+  margin: .01em;
+}
+
+.box-items h1 {
+  font-size: 2em;
+  /* width: ; */
+}
+.box-items button, .userSubscription button {
+
+  border-radius: 5em;
+  width: fit-content;
+  padding: 0em 2em;
+  font-family:'Dosis', sans-serif;
+  font-size: 1em;
+}
+
+.box-items button:hover, .userSubscription button:hover {
+  padding: .01em;
+  margin: .01em;
+  border-radius: 5em;
+  width: fit-content;
+  padding: 0em 2em;
+  background-color: #EA9A9D;
 }
 
 .overlay {
@@ -33,7 +79,7 @@
 .modal {
   position: fixed;
   z-index: 20;
-  background: #fff;
+  background: rgba(248, 243, 243, 0.85);
   width: 500px;
   border-radius: 1em;
 
