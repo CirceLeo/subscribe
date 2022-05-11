@@ -26,16 +26,17 @@ function UserBoxes(props) {
     )}, [closeModal])
 
     // console.log(user)
-
+    
     const renderedSubscriptions = user.subscriptions.map(sub => {
         // console.log(sub)
+        const date = new Date(sub.created_at)
         return (
             <div key={sub.id} className="userSubscription">
                 {/* <p>things be breaking</p> */}
                 <h3>{sub.box.title}</h3>
-                <p>{sub.box.description}</p>
                 <p> Total subscription length: {sub.duration} {sub.duration > 1 ? "months" : "month"} </p>
-                <p>TO CHANGE - remaining time</p>
+                <p>subscription started: {date.toLocaleDateString("en-US")}</p>
+                <p>remaining deliveries in your subscription: {sub.remaining_boxes}</p>
                 <button onClick={(e) => openModal(e, sub.id)}>Edit this subscription?</button>
             </div>
         )

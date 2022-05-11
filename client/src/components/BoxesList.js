@@ -25,6 +25,16 @@ function BoxesList({ boxInfo }) {
     
     return (
         <div className='flex'>
+            <div className="boxes-search">
+                <form>
+                <label>Search for Boxes: </label>
+                    <input 
+                        name="box-search"
+                        type="text"
+                        placeholder="search by name or contents..."
+                    />
+                </form>
+            </div>
             {
                 modalOpen && (
                     <>
