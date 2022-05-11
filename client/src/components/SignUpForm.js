@@ -80,7 +80,7 @@ function SignUpForm() {
                 <br/>
                 <label>email address</label>
                 <input
-                    type="text"
+                    type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleFormChange}

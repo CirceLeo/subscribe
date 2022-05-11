@@ -8,7 +8,8 @@ import LoginPage from './components/LoginPage';
 import CheckoutForm from './components/CheckoutForm';
 import AdminBoxes from './components/AdminBoxes';
 import UserBoxes from './components/UserBoxes';
-import LoggingOut from './components/LoggingOut';
+import LoggingOut from './components/Loading';
+import Loading from './components/Loading';
 
 function App() {
 
@@ -25,16 +26,16 @@ function App() {
 
   return (
     <UserProvider>
-     <Router>
+      <Router>
         <Routes>
           <Route path='/' element={<BoxesPage/>} />
           <Route path='/boxes' element={<BoxesPage/>} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/editboxes' element={<AdminBoxes/>} />
-         <Route path='/checkout' element={<CheckoutForm/>} />
-         <Route path='/myboxes' element={<UserBoxes/>} />
-         <Route path="/loggingout" element={<LoggingOut />} />
-       </Routes>
+          <Route path='/checkout' element={<CheckoutForm/>} />
+          <Route path='/myboxes' element={<UserBoxes/>} />
+          <Route path="/loggingout" element={<Loading message={"Logging Out..."} />} />
+        </Routes>
       </Router>
     </UserProvider>
 

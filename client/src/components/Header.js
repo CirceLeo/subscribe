@@ -14,7 +14,7 @@ function Header(props) {
         .then( res => console.log(res))
         .then(() => 
         { navigateTo("/loggingout") 
-          setUser({})
+            setUser({})
         })
         // .then(data => console.log(data))
         // .then( data => console.log(data))

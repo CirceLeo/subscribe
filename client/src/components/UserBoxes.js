@@ -23,7 +23,7 @@ function UserBoxes(props) {
         fetch(`http://localhost:4000/users/${user.id}`)
         .then(res => res.json())
         .then(updatedUser  => setUser(updatedUser) 
-    )}, [])
+    )}, [closeModal])
 
     // console.log(user)
 
@@ -50,6 +50,9 @@ function UserBoxes(props) {
                 <p><strong>Number of subscriptions:</strong> {renderedSubscriptions.length}</p>
                 <p><strong>Total monthly cost: </strong>$ {user.total_box_cost}</p>
             </div>
+            <div className="flex">
+                {renderedSubscriptions.length > 0 ? renderedSubscriptions : <p>You have no current subscriptions, sad!</p>}
+            </div>
             {
                 modalOpen && (
                     <>
@@ -61,9 +64,7 @@ function UserBoxes(props) {
                     </>
                 )
             }
-            <div className="flex">
-                {renderedSubscriptions.length > 0 ? renderedSubscriptions : <p>You have no current subscriptions, sad!</p>}
-            </div>
+            
         </div>
     )
 }

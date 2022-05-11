@@ -1,16 +1,17 @@
 import {useEffect, useState} from 'react'
 
 function UserEditBox({closeModal, curSub}) {
-    
+    const [counter, setCounter] = useState(0)
+
     useEffect(() => {
         fetch(`http://localhost:4000/subscriptions/${curSub}`)
         .then(resp => resp.json())
         .then(data => {
             setShowSub(data)
-            console.log("from useEffect in edit", data)
+            // console.log("from useEffect in edit", data)
             setContentLoaded(true)
         })
-    }, [])
+    }, [counter])
     
     const [showSub, setShowSub] = useState({})
     const [contentLoaded, setContentLoaded] = useState(false) 
@@ -34,7 +35,7 @@ function UserEditBox({closeModal, curSub}) {
             })
         })
         .then( res => res.json())
-        .then( data => console.log(data))
+        .then( data => setCounter(counter + 1))
         .catch( error => console.log(error.message));
     }
 
@@ -43,6 +44,7 @@ function UserEditBox({closeModal, curSub}) {
         .then(res => console.log("after delete:", res))
         .then(() => {
             closeModal()
+            setCounter(counter +1)
         })
         .catch( error => console.log(error.message));
     }

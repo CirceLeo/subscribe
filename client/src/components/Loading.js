@@ -1,7 +1,7 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
 
-function LoggingOut() {
+function Loading({message}) {
 
     let navigateTo = useNavigate();
 
@@ -14,9 +14,9 @@ function LoggingOut() {
 
     return (
         <div className="header">
-            <h1 id="logging-out">Logging out...</h1>
+            <h1 id="logging-out">{message}</h1>
         </div>
     )
 }
 
-export default LoggingOut
+export default Loading
