@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import AdminBoxItem from "./AdminBoxItem";
 import AdminEditBox from "./AdminEditBox";
+import AdminCreateBox from "./AdminCreateBox";
 import Header from "./Header"
 
 
@@ -10,6 +11,7 @@ function AdminBoxes() {
     const [adminBoxes, setAdminBoxes] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedBox, setSelectedBox] = useState(989837);
+    const [openCreateBox, setOpenCreateBox] = useState(false);
     // const [editModal, setEditModal] = useState(false);
 
     useEffect(() => {
@@ -33,10 +35,15 @@ function AdminBoxes() {
         setModalOpen(false)
     }
 
+    function handleCreateClick() {
+        setModalOpen(true)
+        setOpenCreateBox(true)
+    }
+
     return (
         <div>
             <Header/>
-            <h1>Edit the boxes</h1>
+            <button onClick={handleCreateClick}>Create a new box</button>
             <div className='flex'>
             {
                 modalOpen && (
@@ -45,8 +52,10 @@ function AdminBoxes() {
                     <div className="modal">
                         
                     {/* <main className="modal__main"> */}
-                        {  
-                            <AdminEditBox closeModal={closeModal} boxId={selectedBox}/>
+                        {  modalOpen && openCreateBox ? 
+                        <AdminCreateBox /> 
+                        :
+                        <AdminEditBox closeModal={closeModal} boxId={selectedBox}/>
                         }
                     {/* </main> */}
                     </div>

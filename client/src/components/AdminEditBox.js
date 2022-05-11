@@ -49,6 +49,13 @@ function AdminEditBox({ closeModal, boxId }) {
        .catch( error => console.log(error.message));
     }
 
+    function handleDeleteClick() {
+        fetch(`http://localhost:4000/boxes/${boxId}`, {
+            method: "DELETE"
+        })
+        .catch( error => console.log(error.message));
+    }
+
 
     return (
         <div className="box-detail">
@@ -66,7 +73,7 @@ function AdminEditBox({ closeModal, boxId }) {
             <label className="form-label">Description:</label>
             <input type="textbox" placeholder={viewedBox.description} onChange={handleInputChange} name="description" value={formData.description}></input>
             <button>Submit changes</button>
-            <button onClick={closeModal}>Cancel changes</button>
+            <button onClick={handleDeleteClick}>Delete this box</button>
             </form>
         </div>
 
