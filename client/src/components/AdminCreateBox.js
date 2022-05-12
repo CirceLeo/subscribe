@@ -48,7 +48,7 @@ function AdminCreateBox() {
             <input type="text" name="image_url" onChange={handleInputChange} value={formData.image_url} required></input>
             <label className="form-label">Price</label>
             <input type="number" name="price" onChange={handleInputChange} value={formData.price} required></input>
-            <label className="form-label">Items</label>
+            <label className="form-label">Contents</label>
             <input type="text" name="items" onChange={handleInputChange} value={formData.items} required></input>
             <label className="form-label">Description</label>
             <input type="text" name="description" onChange={handleInputChange} value={formData.description} required></input>

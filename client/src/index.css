@@ -40,6 +40,13 @@ body{
   padding: .5em;
 }
 
+.box-detail {
+  align-items: center;
+}
+
+.box-detail h2{
+  text-align: center;
+}
 
 .navLinks a:hover, .fake-header-link:hover, .navLinks button:hover, .modal-button:hover{
   text-decoration: none;

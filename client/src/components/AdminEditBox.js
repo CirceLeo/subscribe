@@ -68,7 +68,7 @@ function AdminEditBox({ closeModal, boxId }) {
             <input type="text" placeholder={viewedBox.image_url} onChange={handleInputChange} name="image_url" value={formData.image_url}></input>
             <label className="form-label">Price:</label>
             <input type="number" placeholder={viewedBox.price} onChange={handleInputChange} name="price" value={formData.price}></input>
-            <label className="form-label">Items:</label>
+            <label className="form-label">Contents:</label>
             <input type="textbox" placeholder={viewedBox.items} onChange={handleInputChange} name="items" value={formData.items}></input>
             <label className="form-label">Description:</label>
             <input type="textbox" placeholder={viewedBox.description} onChange={handleInputChange} name="description" value={formData.description}></input>

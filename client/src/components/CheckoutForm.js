@@ -62,9 +62,9 @@ function CheckoutForm({closeModal, setModalCheckout, boxId}) {
         <div className="checkout">
             <button onClick={handleExitClick} className="close-button">&times;</button>
             <h1>Checkout</h1>
-            <h2>Title: {viewBox.title}</h2>
+            <h2>{viewBox.title}</h2>
             <p>Price: $ {viewBox.price} per month</p>
-            <p>Items: {viewBox.items}</p>
+            <p>Contents: {viewBox.items}</p>
             <p>Description: {viewBox.description}</p>
             {showErrors ? <> <h3 className='checkout-issue'>{errors}</h3> <button className="close-button" onClick={() => setShowErrors(false)}>X</button> </> : null}
             <form onSubmit={handleSubmit}>

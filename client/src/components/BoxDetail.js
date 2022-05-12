@@ -31,10 +31,10 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
         <div className='box-detail'>
             <button onClick={closeModal} className="close-button">&times;</button>
             {/* {console.log(viewBox)} */}
-            <h2>Title: {viewBox.title}</h2>
+            <h2>{viewBox.title}</h2>
             <img className="box-pic" src={viewBox.image_url}></img>
             <h3>Price: $ {viewBox.price} per month</h3>
-            <p><strong>Items: </strong>{viewBox.items}</p>
+            <p><strong>Contents: </strong>{viewBox.items}</p>
             <p><strong>Description:  </strong>{viewBox.description}</p>
             {
             

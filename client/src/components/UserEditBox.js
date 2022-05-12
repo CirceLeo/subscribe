@@ -53,20 +53,20 @@ function UserEditBox({closeModal, curSub}) {
         <div className="user-edit-sub">
             <button className="close-button" onClick={closeModal}>X</button>
             { contentLoaded ? 
-                <>
+                <div className='subscription-edit'>
                     <div className='box-info'>
-                    <h2>Box infomation:</h2>
-                    <p><strong>Box title: </strong>{showSub.box.title}</p>
-                    <p><strong>Monthly Cost: </strong> $ {showSub.box.price}</p>
+                        <h2>Box infomation:</h2>
+                        <p><strong>Box title: </strong>{showSub.box.title}</p>
+                        <p><strong>Monthly Cost: </strong> $ {showSub.box.price}</p>
+                        <p><strong>Box contents: </strong>{showSub.box.items}</p>
                     </div>
                     <div className='sub-info'>
-                    <h2>Subscription details:</h2>
-                    <p><strong>Current Subscription Length:</strong> {showSub.duration} {showSub.duration > 1 ? "months" : "month"}</p>
-                    {/* <p><strong>Number recieved so far: </strong>{showSub.duration}</p> */}
-                    <p><strong>Deliveries remaining in subscription: </strong> {showSub.remaining_boxes}</p>
+                        <h2>Subscription details:</h2>
+                        <p><strong>Current Subscription Length:</strong> {showSub.duration} {showSub.duration > 1 ? "months" : "month"}</p>
+                        <p><strong>Deliveries remaining in subscription: </strong> {showSub.remaining_boxes}</p>
                     </div>
-                    <h2>Edit Subscription Details: </h2> 
-                    <form onSubmit={handleDurationSubmit}>
+                    <h2 className='headline'>Edit Subscription Details: </h2> 
+                    <form className="user-edit-form" onSubmit={handleDurationSubmit}>
                         <p><strong>Length of subscription: </strong><input 
                             type="number" 
                             placeholder={showSub.duration} 
@@ -75,11 +75,14 @@ function UserEditBox({closeModal, curSub}) {
                             value={changeDurationValue}
                             min={0}
                             />
-                        months</p> <button className='modal-button'>Submit change</button>
-                        <button  className='modal-button' onClick={handleEndSub}>End Subscription</button>
+                        months</p> 
+                        <div className='user-edit-buttons'>
+                            <button className='modal-button'>Submit change</button>
+                            <button  className='modal-button' onClick={handleEndSub}>End Subscription</button>
+                        </div>
                         {/* <p><strong>Length of subscription: </strong>{showSub.duration} months</p> */}
                     </form>
-                </>
+                </div>
             :
             <p>Box content loading!</p>
             }

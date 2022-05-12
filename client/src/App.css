@@ -20,6 +20,36 @@ body {
   max-height: 10em;
 }
 
+.box-info {
+  grid-area: box;
+}
+
+.sub-info {
+  grid-area: sub;
+}
+
+.headline {
+  grid-area: minititle;
+}
+
+.user-edit-form{
+  grid-area: form;
+  display: flex;
+}
+
+.user-edit-buttons{
+  grid-area: buttons;
+}
+
+.subscription-edit{
+  display: grid;
+  grid-template-areas: 
+  "box sub"
+  "box sub"
+  "minititle minititle"
+  "form form";
+}
+
 .box-detail .box-pic {
   border: #BA262B solid 2px;
   /* width: 22em; */
