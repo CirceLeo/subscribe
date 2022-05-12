@@ -8,7 +8,7 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
 
     let navigateTo = useNavigate();
 
-    const user = useContext(UserContext);
+    const [user] = useContext(UserContext);
     // console.log("from boxdetail: ", user)
     const [viewBox, setViewBox] = useState({});
 
@@ -19,8 +19,14 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
         .catch( error => console.log(error.message));
     }, [])
 
-    
-    
+    let userHasBox = false
+
+    if(user.username && user.subscriptions.length > 0){
+        userHasBox = user.subscriptions.find(sub => {
+            return sub.box_id === boxId
+        })
+    }
+
     return (
         <div className='box-detail'>
             <button onClick={closeModal} className="close-button">&times;</button>
@@ -28,15 +34,18 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
             <h2>Title: {viewBox.title}</h2>
             <img className="box-pic" src={viewBox.image_url}></img>
             <h3>Price: $ {viewBox.price} per month</h3>
-            <h3>Items: {viewBox.items}</h3>
-            <h3>Description: {viewBox.description}</h3>
-            {/* conditional if user or say to log in */}
+            <p><strong>Items: </strong>{viewBox.items}</p>
+            <p><strong>Description:  </strong>{viewBox.description}</p>
             {
             
-            user[0].username ?
+            user.username ?
+            <>
+            { user.username && userHasBox ? <p>You're already subscribed to this box!</p> : 
             <>
             <label>Like this box? </label>
             <button className='modal-button' onClick={() => setModalCheckout(true)}>Click here to subscribe!</button>
+            </>
+            }
             </>
             :
             <>

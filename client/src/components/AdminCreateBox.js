@@ -43,16 +43,16 @@ function AdminCreateBox() {
         <h2>Create a new box!</h2>
         <form onSubmit={handleFormSubmit}>
             <label className="form-label">Title</label>
-            <input type="text" name="title" onChange={handleInputChange} value={formData.title}></input>
+            <input type="text" name="title" onChange={handleInputChange} value={formData.title} required></input>
             <label className="form-label">Image</label>
-            <input type="text" name="image_url" onChange={handleInputChange} value={formData.image_url}></input>
+            <input type="text" name="image_url" onChange={handleInputChange} value={formData.image_url} required></input>
             <label className="form-label">Price</label>
-            <input type="number" name="price" onChange={handleInputChange} value={formData.price}></input>
+            <input type="number" name="price" onChange={handleInputChange} value={formData.price} required></input>
             <label className="form-label">Items</label>
-            <input type="text" name="items" onChange={handleInputChange} value={formData.items}></input>
+            <input type="text" name="items" onChange={handleInputChange} value={formData.items} required></input>
             <label className="form-label">Description</label>
-            <input type="text" name="description" onChange={handleInputChange} value={formData.description}></input>
-            <button>Create box</button>
+            <input type="text" name="description" onChange={handleInputChange} value={formData.description} required></input>
+            <button className='modal-button'>Create box</button>
         </form>
         </>
     )

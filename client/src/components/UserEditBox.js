@@ -54,13 +54,17 @@ function UserEditBox({closeModal, curSub}) {
             <button className="close-button" onClick={closeModal}>X</button>
             { contentLoaded ? 
                 <>
+                    <div className='box-info'>
                     <h2>Box infomation:</h2>
                     <p><strong>Box title: </strong>{showSub.box.title}</p>
                     <p><strong>Monthly Cost: </strong> $ {showSub.box.price}</p>
-                    <p><strong>Current Subscription Length:</strong> {showSub.duration} {showSub.duration > 1 ? "months" : "month"}</p>
+                    </div>
+                    <div className='sub-info'>
                     <h2>Subscription details:</h2>
-                    <p><strong>Number recieved so far: </strong></p>
-                    <p><strong>Deliveries remaining in subscription: </strong></p>
+                    <p><strong>Current Subscription Length:</strong> {showSub.duration} {showSub.duration > 1 ? "months" : "month"}</p>
+                    {/* <p><strong>Number recieved so far: </strong>{showSub.duration}</p> */}
+                    <p><strong>Deliveries remaining in subscription: </strong> {showSub.remaining_boxes}</p>
+                    </div>
                     <h2>Edit Subscription Details: </h2> 
                     <form onSubmit={handleDurationSubmit}>
                         <p><strong>Length of subscription: </strong><input 
@@ -71,8 +75,8 @@ function UserEditBox({closeModal, curSub}) {
                             value={changeDurationValue}
                             min={0}
                             />
-                        months</p> <button>Submit change</button>
-                        <button onClick={handleEndSub}>End Subscription</button>
+                        months</p> <button className='modal-button'>Submit change</button>
+                        <button  className='modal-button' onClick={handleEndSub}>End Subscription</button>
                         {/* <p><strong>Length of subscription: </strong>{showSub.duration} months</p> */}
                     </form>
                 </>

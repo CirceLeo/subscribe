@@ -72,8 +72,8 @@ function AdminEditBox({ closeModal, boxId }) {
             <input type="textbox" placeholder={viewedBox.items} onChange={handleInputChange} name="items" value={formData.items}></input>
             <label className="form-label">Description:</label>
             <input type="textbox" placeholder={viewedBox.description} onChange={handleInputChange} name="description" value={formData.description}></input>
-            <button>Submit changes</button>
-            <button onClick={handleDeleteClick}>Delete this box</button>
+            <button className='modal-button'>Submit changes</button>
+            <button className='modal-button' onClick={handleDeleteClick}>Delete this box</button>
             </form>
         </div>
 
