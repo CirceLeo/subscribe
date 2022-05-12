@@ -10,7 +10,7 @@ const emptyFormObj = {
     password_confirm: '',
     isAdmin: false
 }
-function SignUpForm() {
+function SignUpForm({closeSignUp}) {
 
     
     
@@ -51,20 +51,17 @@ function SignUpForm() {
                 } else {
                     res.json().then(response => {
                         setErrors(response.errors)
-                        //add spaces etc to errors
                         setShowErrors(true)
                     })
                 }
                 setFormData(emptyFormObj)
             }
-        //     res.json())
-        // .then( data => {
-        //     console.log(data)
         )
         .catch( error => console.log(error.message));
     }
     return (
         <div className="signup_form">
+            <button onClick={closeSignUp}>X</button>
             <h3>Welcome!</h3>
             <p>Fill out your details below to sign up:</p>
             {showErrors ? <p className="signup_issues">{errors} <button onClick={() => setShowErrors(false)}>X</button></p> : null }
@@ -106,7 +103,7 @@ function SignUpForm() {
                 />
                 <br/>
 
-                <button type="submit">Sign up!</button>
+                <button className="modal-button" type="submit">Sign up!</button>
             </form>
         </div>
     )

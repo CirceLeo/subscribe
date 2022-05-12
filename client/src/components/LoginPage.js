@@ -52,8 +52,12 @@ function LoginPage({}) {
         })
     }
 
-    function toggleSignUpForm(){
-        setShowSignUp(!showSignUp)
+    function openSignUp(){
+        setShowSignUp(true)
+    }
+
+    function closeSignUp(){
+        setShowSignUp(false)
     }
     return (
         <div>
@@ -84,9 +88,17 @@ function LoginPage({}) {
 
             <br />
             {/* cant apply X style cause it only applys to one version? */}
-            <button className="modal-button" onClick={toggleSignUpForm}>{showSignUp ? "X": "not a user? Sign Up!"}</button>
-            {showSignUp ? <SignUpForm/> : null}
-
+            <button className="modal-button" onClick={openSignUp}> not a user? Sign Up!</button>
+            {
+                showSignUp && (
+                    <>
+                    <div className="overlay"></div>
+                    <div className="modal">
+                        <SignUpForm closeSignUp={closeSignUp}/>
+                    </div>
+                    </>
+                )
+            }
         </div>
     )
 }
