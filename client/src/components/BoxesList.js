@@ -4,7 +4,7 @@ import BoxDetail from './BoxDetail';
 import CheckoutForm from './CheckoutForm';
 
 
-function BoxesList({ boxInfo }) {
+function BoxesList({ boxInfo, setBoxesURL }) {
 
     const [searchTerm, setSearchTerm] = useState("");
     const [modalOpen, setModalOpen] = useState(false);
@@ -25,12 +25,13 @@ function BoxesList({ boxInfo }) {
         console.log(searchTerm)
     }
 
-    function handleSortChange() {
+    function handleSortChange(e) {
         console.log("changing?")
+        setBoxesURL(`/${e.target.value}`)
     }
     
     const filteredBoxes = boxInfo.filter((box) => {
-        return box.title.includes(searchTerm);
+        return box.title.toLowerCase().includes(searchTerm.toLowerCase()) || box.items.toLowerCase().includes(searchTerm.toLocaleLowerCase());
     })
 
     const renderedBoxes = filteredBoxes.map((box) => {

@@ -6,18 +6,20 @@ function BoxesPage() {
 
     const [boxInfo, setBoxInfo] = useState([]);
 
+    const [boxesURL, setBoxesURL] = useState(`http://localhost:4000/low-to-high`)
+
     useEffect(() => {
-        fetch(`http://localhost:4000/boxes`)
+        fetch(boxesURL)
         .then( res => res.json())
         .then( data => setBoxInfo(data))
         .catch( error => console.log(error.message));
-    }, [])
+    }, [boxesURL])
 
     return (
         <div>
             <Header />
             <div id="box-container">
-                <BoxesList boxInfo={boxInfo} setBoxInfo={setBoxInfo}/>
+                <BoxesList boxInfo={boxInfo} setBoxInfo={setBoxInfo} setBoxesURL={setBoxesURL}/>
             </div>
         </div>
     )

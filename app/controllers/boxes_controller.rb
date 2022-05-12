@@ -15,7 +15,11 @@ class BoxesController < ApplicationController
     end
 
     def index
-        render json: Box.all, status: :ok
+        render json: Box.all.sort_by(&:price), status: :ok
+    end
+
+    def high_to_low
+        render json: Box.all.sort_by(&:price).reverse!, status: :ok
     end
 
     def update
