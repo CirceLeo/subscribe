@@ -106,6 +106,23 @@ Box.create(
     image_url:"https://cdn.shopify.com/s/files/1/0493/3061/8524/t/10/assets/spice-spread_1000x.jpg?v=131552528987213358041605542143"
 )
 
+Box.create(
+    title: "Candy Club",
+    price: 29.99,
+    items: "Six 6oz candy cups",
+    description: "We partner with small artisans and famed candy producers to fill your box with a thoughtfully curated selection of delectable candies every month.",
+    image_url:"https://subscription.candyclub.com/assets/images/ccr/whats_inside_fun_desktop.png"
+)
+
+Box.create(
+    title: "Artvana",
+    price: 45.00,
+    items: "Each monthly box comes stuffed with all of the art supplies you will need for each practice.",
+    description: "Nurture Your Inner Artist
+    Artväna makes it easy to develop your artistic ability every month.",
+    image_url:"https://cdn.shopify.com/s/files/1/0561/3142/0249/products/CharcoalPhotoSustainableandEnergyEfficientArchitecturePresentation_2.png?v=1647557757&width=823"
+)
+
 
 20.times do
     Subscription.create(

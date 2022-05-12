@@ -22,11 +22,9 @@ function BoxesList({ boxInfo, setBoxesURL }) {
 
     function handleSearch(e) {
         setSearchTerm(e.target.value)
-        // console.log(searchTerm)
     }
 
     function handleSortChange(e) {
-        // console.log("changing?")
         setBoxesURL(`/${e.target.value}`)
     }
     
@@ -62,13 +60,10 @@ function BoxesList({ boxInfo, setBoxesURL }) {
                     <>
                     <div className="overlay"></div>
                     <div className="modal">
-                        
-                    {/* <main className="modal__main"> */}
                         {modalCheckout ? 
                             <CheckoutForm closeModal={closeModal} boxId={currentBox} setModalCheckout={setModalCheckout}/> :
                             <BoxDetail closeModal={closeModal} boxId={currentBox} setModalCheckout={setModalCheckout} /> 
                         }
-                    {/* </main> */}
                     </div>
                     </>
                 )

@@ -61,10 +61,10 @@ function SignUpForm({closeSignUp}) {
     }
     return (
         <div className="signup_form">
-            <button onClick={closeSignUp}>X</button>
+            <button className="close-button" onClick={closeSignUp}>X</button>
             <h3>Welcome!</h3>
             <p>Fill out your details below to sign up:</p>
-            {showErrors ? <p className="signup_issues">{errors} <button onClick={() => setShowErrors(false)}>X</button></p> : null }
+            {showErrors ? <p className="signup_issues">{errors} <button className="close-button" onClick={() => setShowErrors(false)}>X</button></p> : null }
             <form onSubmit={handleSubmit}>
                 <label>username</label>
                 <input

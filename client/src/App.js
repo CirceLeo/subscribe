@@ -17,7 +17,7 @@ function App() {
     fetch("/me")
     .then(res => {
       if (res.ok) {
-        console.log(res)
+        // console.log(res)
         res.json().then(user => setUser(user))
       }
       else {

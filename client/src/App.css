@@ -51,6 +51,11 @@ body {
   margin: 0.15em;
 }
 
+.box-description {
+  overflow: scroll;
+  max-height: 4em;
+}
+
 .box-info {
   grid-area: box;
 }
@@ -168,6 +173,28 @@ body {
   background-color: #EA9A9D;
 }
 
+.boxes-search{
+  /* background-color: #2bba26; */
+  background-image: linear-gradient(to right, #EA9A9D, #C1292E);
+  margin: .5em ;
+  padding: .5em;
+  border-radius: 1em;
+}
+
+.boxes-search ::placeholder{
+  /* background-color: #2bba26; */
+  color: #321213;
+}
+
+.boxes-search label {
+  margin-left: 1em;
+  margin-right: .5em;
+}
+
+.boxes-search input, .boxes-search select{
+  background-color: #f08f92d9;
+}
+
 .overlay {
   width: 100%;
   height: 100%;
@@ -184,6 +211,8 @@ body {
   background: rgba(248, 243, 243, 0.85);
   width: 70vw;
   border-radius: 1em;
+  box-shadow: 2px 2px 10px 5px #ddd5d5;
+
 
   /* Center the modal */
   top: 50%;
@@ -215,12 +244,26 @@ body {
 }
 
 .checkout-issue, .logon-issue{
-  background-color: #FFBF47;
-  color: #BA262B;
+  background-color: rgba(133, 201, 201, .5);
+  color: #982a2d;
+  font-weight: 400;
   width: fit-content;
   border-radius: 5px;
   font-size: 1.1em;
+  /* margin-left: 1em; */
 }
+
+.signup_issues{
+  border: #982a2d solid 2px;
+  border-radius: 1em;
+  box-shadow: 2px 3px 2px #EA9A9D;
+  width: fit-content;
+  margin: 2em;
+}
+
+/* .checkout-issue, .logon-issue p {
+  margin: 2em;
+} */
 
 .close-button:hover {
   background-color: red;

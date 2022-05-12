@@ -28,14 +28,12 @@ function LoginPage({}) {
         .then( res => {
             if(res.ok){
                 res.json().then(userData => {
-                    // goodLogin(user)
                     setErrors(null)
                     setUser(userData)
-                    navigate('/boxes')
+                    navigate('/loggingin')
                 })
             } else {
                 res.json().then(response => {
-                    // console.log(response.error)
                     setErrors(response.error)
                     setShowErrors(true)
                 })
@@ -43,7 +41,7 @@ function LoginPage({}) {
             setFormData({username: '', password: ''})
             
         })
-        .then(navigate("/loggingin"))
+        // .then(navigate("/loggingin"))
         .catch( error => console.log(error.message));
     }
 
