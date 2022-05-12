@@ -26,7 +26,7 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
             <button onClick={closeModal} className="close-button">&times;</button>
             {/* {console.log(viewBox)} */}
             <h2>Title: {viewBox.title}</h2>
-            <img src={viewBox.imageUrl}></img>
+            <img className="box-pic" src={viewBox.image_url}></img>
             <h3>Price: $ {viewBox.price} per month</h3>
             <h3>Items: {viewBox.items}</h3>
             <h3>Description: {viewBox.description}</h3>
@@ -35,8 +35,8 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
             
             user[0].username ?
             <>
-            <label>Like the look of this box? Subscribe! </label>
-            <button className='modal-button' onClick={() => setModalCheckout(true)}>Checkout here</button>
+            <label>Like this box? </label>
+            <button className='modal-button' onClick={() => setModalCheckout(true)}>Click here to subscribe!</button>
             </>
             :
             <>

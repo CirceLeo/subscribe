@@ -15,6 +15,14 @@ body {
   height: auto;
   margin: 1em;
   border-radius: 4em;
+  max-height: 10em;
+}
+
+.box-detail .box-pic {
+  border: #BA262B solid 2px;
+  /* width: 22em; */
+  height: 20em;
+  width: auto;
 }
 
 
