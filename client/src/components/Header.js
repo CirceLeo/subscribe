@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../context/user";
 import { Navigate, NavLink, useNavigate } from "react-router-dom"
+// import subscrybelogo from "../client/public/subscrybelogo.png"
 
 function Header(props) {
 
@@ -24,6 +25,7 @@ function Header(props) {
     return (
         <div className="header">
             <h1 className="header-logo">SubScrybe</h1>
+            <img src="../public/subscrybelogo.png"/>
             {/* if there's a current user, include welcome name */}
 
             {user.username ? <h2 id="welcome-user">{`Welcome, ${user.username}`}</h2> : null}
