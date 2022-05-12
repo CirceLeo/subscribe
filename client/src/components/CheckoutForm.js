@@ -73,6 +73,18 @@ function CheckoutForm({closeModal, setModalCheckout, boxId}) {
                 <br/>
                 <p>Total Cost: $ {viewBox.price * inputDuration}</p>
                 <br/>
+            
+                <h2>Payment</h2>
+                <h2>Credit/Debit Card</h2>
+        
+                <label className='form-label'>Card Number:</label>
+                <input type="text" required maxLength="19" minLength="19"></input>
+                <label className='form-label'>Expiration Date:</label>
+                <input type="month" required></input>
+                <label className='form-label'>Name on Card:</label>
+                <input type="text" required></input>
+                <label className='form-label'>CVV:</label>
+                <input type="text" required maxLength="3"></input>
                 <button className="modal-button" type="submit" >Subscribe!</button>
             </form>
         </div>

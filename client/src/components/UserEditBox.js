@@ -16,10 +16,12 @@ function UserEditBox({closeModal, curSub}) {
     const [showSub, setShowSub] = useState({})
     const [contentLoaded, setContentLoaded] = useState(false) 
     const [changeDurationValue, setChangeDurationValue] = useState(showSub.duration)
+    const [changeTotal, setChangeTotal] = useState(false)
     // console.log(showSub)
 
     function handleDurationChange(e){
         setChangeDurationValue(e.target.value)
+        setChangeTotal(true)
     }
 
     function handleDurationSubmit(e){
@@ -80,6 +82,11 @@ function UserEditBox({closeModal, curSub}) {
                             <button className='modal-button'>Submit change</button>
                             <button  className='modal-button' onClick={handleEndSub}>End Subscription</button>
                         </div>
+                        
+                        {
+                            changeTotal ? <p>Total Cost: $ {showSub.box.price * changeDurationValue}</p> : <p>Total Cost: $ {showSub.box.price * showSub.duration}</p>
+                        }
+                        
                         {/* <p><strong>Length of subscription: </strong>{showSub.duration} months</p> */}
                     </form>
                 </div>

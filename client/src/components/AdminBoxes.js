@@ -33,6 +33,7 @@ function AdminBoxes() {
     
     function closeModal(){
         setModalOpen(false)
+        setOpenCreateBox(false)
     }
 
     function handleCreateClick() {
@@ -53,7 +54,7 @@ function AdminBoxes() {
                         
                     {/* <main className="modal__main"> */}
                         {  modalOpen && openCreateBox ? 
-                        <AdminCreateBox /> 
+                        <AdminCreateBox closeModal={closeModal}/> 
                         :
                         <AdminEditBox closeModal={closeModal} boxId={selectedBox}/>
                         }

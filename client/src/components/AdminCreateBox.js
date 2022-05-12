@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function AdminCreateBox() {
+function AdminCreateBox({ closeModal }) {
 
     let navigateTo = useNavigate();
 
@@ -40,19 +40,20 @@ function AdminCreateBox() {
 
     return (
         <>
+        <button onClick={closeModal} className="close-button">&times;</button>
         <h2>Create a new box!</h2>
         <form onSubmit={handleFormSubmit}>
-            <label className="form-label">Title</label>
-            <input type="text" name="title" onChange={handleInputChange} value={formData.title} required></input>
-            <label className="form-label">Image</label>
-            <input type="text" name="image_url" onChange={handleInputChange} value={formData.image_url} required></input>
-            <label className="form-label">Price</label>
-            <input type="number" name="price" onChange={handleInputChange} value={formData.price} required></input>
-            <label className="form-label">Contents</label>
-            <input type="text" name="items" onChange={handleInputChange} value={formData.items} required></input>
-            <label className="form-label">Description</label>
-            <input type="text" name="description" onChange={handleInputChange} value={formData.description} required></input>
-            <button className='modal-button'>Create box</button>
+            <label className="form-label">Title:</label>
+            <input type="text" name="title" placeholder="Title" onChange={handleInputChange} value={formData.title} required></input>
+            <label className="form-label">Image:</label>
+            <input type="text" name="image_url" placeholder="Image" onChange={handleInputChange} value={formData.image_url} required></input>
+            <label className="form-label">Price:</label>
+            <input type="number" name="price" placeholder="Price" onChange={handleInputChange} value={formData.price} required></input>
+            <label className="form-label">Items:</label>
+            <input type="text" name="items" placeholder="Items" onChange={handleInputChange} value={formData.items} required></input>
+            <label className="form-label">Description:</label>
+            <input type="text" name="description" placeholder="Description" onChange={handleInputChange} value={formData.description} required></input>
+            <button>Create box</button>
         </form>
         </>
     )
