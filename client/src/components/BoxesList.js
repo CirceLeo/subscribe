@@ -6,13 +6,10 @@ import CheckoutForm from './CheckoutForm';
 
 function BoxesList({ boxInfo }) {
 
+    const [searchTerm, setSearchTerm] = useState("");
     const [modalOpen, setModalOpen] = useState(false);
     const [currentBox, setCurrentBox] = useState(5765764);
     const [modalCheckout, setModalCheckout] = useState(false)
-
-    const renderedBoxes = boxInfo.map((box) => {
-        return <BoxListItem key={box.id} box={box} openModal={openModal}/>
-    })
 
     function openModal(e, boxId) {
         setModalOpen(true)
@@ -22,6 +19,23 @@ function BoxesList({ boxInfo }) {
     function closeModal(){
         setModalOpen(false)
     }
+
+    function handleSearch(e) {
+        setSearchTerm(e.target.value)
+        console.log(searchTerm)
+    }
+
+    function handleSortChange() {
+        console.log("changing?")
+    }
+    
+    const filteredBoxes = boxInfo.filter((box) => {
+        return box.title.includes(searchTerm);
+    })
+
+    const renderedBoxes = filteredBoxes.map((box) => {
+        return <BoxListItem key={box.id} box={box} openModal={openModal}/>
+    })
     
     return (
         <>
@@ -32,7 +46,13 @@ function BoxesList({ boxInfo }) {
                         name="box-search"
                         type="text"
                         placeholder="search by name or contents..."
+                        onChange={handleSearch}
                     />
+                    <label>Sort Boxes by Price</label>
+                    <select onChange={handleSortChange}>
+                        <option value="low-to-high">Low to High</option>
+                        <option value="high-to-low">High to Low</option>
+                    </select>
                 </form>
             </div>
         <div className='flex'>
