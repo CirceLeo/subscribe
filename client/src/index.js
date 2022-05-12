@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <UserProvider>
-      {document.title = "Subscriber"}
+      {/* {document.title = "Subscriber"} */}
       <App />
     </UserProvider>
   </React.StrictMode>
