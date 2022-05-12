@@ -1,13 +1,12 @@
 import './App.css';
-// import { UserProvider } from './context/user';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import BoxesPage from './components/BoxesPage';
 import LoginPage from './components/LoginPage';
 import CheckoutForm from './components/CheckoutForm';
 import AdminBoxes from './components/AdminBoxes';
 import UserBoxes from './components/UserBoxes';
 import Loading from './components/Loading';
-import {useState, useEffect, useContext} from "react";
+import { useEffect, useContext} from "react";
 import { UserContext } from "./context/user";
 
 function App() {
