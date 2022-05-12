@@ -17,12 +17,39 @@ body {
   height: auto;
   margin: 1em;
   border-radius: 4em;
-  max-height: 10em;
+  max-height: 12em;
 }
-/* 
-.box-description {
+
+/* .box-description {
   height: 1em;
 } */
+
+#credit-card-form {
+  text-align: center;
+}
+
+.box-detail-content {
+  font-size: 1.5em;
+  margin: 0.25em;
+}
+
+.content-title {
+  font-weight: bolder;
+  font-size: 1.25em;
+}
+
+.modal-button {
+  display: inline;
+  max-width: 50%;
+  font-size: 1.25em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.modal-title {
+  font-size: 2em;
+  margin: 0.15em;
+}
 
 .box-info {
   grid-area: box;
@@ -59,18 +86,36 @@ body {
   /* width: 22em; */
   height: 20em;
   width: auto;
-  display: grid;
+  justify-self: center;
 }
 
 .checkout, .box-detail, .user-edit-sub {
   padding: .5em;
 }
 
+.column {
+  float: left;
+  width: 50%;
+}
+
 .box-detail {
   align-items: center;
+  display: grid;
 }
 
 .box-detail h2{
+  text-align: center;
+}
+
+.btn-label {
+  font-size: 1.25em;
+  padding: 1em;
+  display: inline;
+  max-width: 45%;
+}
+
+.label-btn-div {
+  padding: 1em;
   text-align: center;
 }
 
@@ -217,4 +262,24 @@ body {
 
 .form-label {
   display: block;
+  font-size: 1.5em;
+}
+
+.form-input {
+  text-align: center;
+  font-size: 1.25em;
+  border-radius: 1em;
+}
+
+.loading-page {
+  text-align: center;
+}
+
+#loading-cat {
+  height: 20em;
+}
+
+#admin-edit-form {
+  text-align: center;
+
 }

@@ -60,21 +60,23 @@ function AdminEditBox({ closeModal, boxId }) {
     return (
         <div className="box-detail">
             <button onClick={closeModal} className="close-button">&times;</button>
-            <h2>Edit {viewedBox.title}!</h2>
+            <h2 className='modal-title'>Edit {viewedBox.title}!</h2>
+            <div id="admin-edit-form">
             <form onSubmit={handleEditFormSubmit}>
-            <label className="form-label">Title:</label>
-            <input type="text" placeholder={viewedBox.title} onChange={handleInputChange} name="title" value={formData.title}></input>
-            <label className="form-label">Image:</label>
-            <input type="text" placeholder={viewedBox.image_url} onChange={handleInputChange} name="image_url" value={formData.image_url}></input>
-            <label className="form-label">Price:</label>
-            <input type="number" placeholder={viewedBox.price} onChange={handleInputChange} name="price" value={formData.price}></input>
-            <label className="form-label">Contents:</label>
-            <input type="textbox" placeholder={viewedBox.items} onChange={handleInputChange} name="items" value={formData.items}></input>
-            <label className="form-label">Description:</label>
-            <input type="textbox" placeholder={viewedBox.description} onChange={handleInputChange} name="description" value={formData.description}></input>
-            <button className='modal-button'>Submit changes</button>
-            <button className='modal-button' onClick={handleDeleteClick}>Delete this box</button>
+                <label className="form-label">Title:</label>
+                <input type="text" className="form-input" placeholder={viewedBox.title} onChange={handleInputChange} name="title" value={formData.title}></input>
+                <label className="form-label">Image:</label>
+                <input type="text" className="form-input" placeholder={viewedBox.image_url} onChange={handleInputChange} name="image_url" value={formData.image_url}></input>
+                <label className="form-label">Price:</label>
+                <input type="number" className="form-input" placeholder={viewedBox.price} onChange={handleInputChange} name="price" value={formData.price}></input>
+                <label className="form-label">Contents:</label>
+                <input type="textbox" className="form-input" placeholder={viewedBox.items} onChange={handleInputChange} name="items" value={formData.items}></input>
+                <label className="form-label">Description:</label>
+                <input type="textbox" className="form-input" placeholder={viewedBox.description} onChange={handleInputChange} name="description" value={formData.description}></input>
+                <button className='modal-button'>Submit changes</button>
+                <button className='modal-button' onClick={handleDeleteClick}>Delete this box</button>
             </form>
+            </div>
         </div>
 
     )

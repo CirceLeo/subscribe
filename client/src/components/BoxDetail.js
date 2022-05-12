@@ -31,27 +31,33 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
         <div className='box-detail'>
             <button onClick={closeModal} className="close-button">&times;</button>
             {/* {console.log(viewBox)} */}
-            <h2>{viewBox.title}</h2>
+            <h2 className="modal-title">{viewBox.title}</h2>
             <img className="box-pic" src={viewBox.image_url}></img>
-            <h3>Price: $ {viewBox.price} per month</h3>
-            <p><strong>Contents: </strong>{viewBox.items}</p>
-            <p><strong>Description:  </strong>{viewBox.description}</p>
+            <h3 className="box-detail-content"><strong className="content-title">Price:</strong> $ {viewBox.price} per month</h3>
+            <div className="row">
+                <div className="column">
+                    <p className="box-detail-content"><strong className="content-title">Contents: </strong>{viewBox.items}</p>
+                </div>
+                <div className="column">
+                    <p className="box-detail-content"><strong className="content-title">Description:  </strong>{viewBox.description}</p>
+                </div>
+            </div>
             {
             
             user.username ?
             <>
             { user.username && userHasBox ? <p>You're already subscribed to this box!</p> : 
-            <>
-            <label>Like this box? </label>
+            <div className='label-btn-div'>
+            <label className='btn-label'>Like this box? </label>
             <button className='modal-button' onClick={() => setModalCheckout(true)}>Click here to subscribe!</button>
-            </>
+            </div>
             }
             </>
             :
-            <>
-            <label>Like the look of this box? Login to Subscribe! </label>
+            <div className='label-btn-div'>
+            <label className='btn-label'>Like the look of this box? Login to Subscribe! </label>
             <button className="modal-button" onClick={() => navigateTo("/login")}>Login</button>
-            </>
+            </div>
             }
         </div>
     )
