@@ -17,7 +17,7 @@ function BoxesPage() {
         <div>
             <Header />
             <div id="box-container">
-                <BoxesList boxInfo={boxInfo} />
+                <BoxesList boxInfo={boxInfo} setBoxInfo={setBoxInfo}/>
             </div>
         </div>
     )
