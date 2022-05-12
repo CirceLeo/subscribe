@@ -45,8 +45,8 @@ function SignUpForm() {
                         setErrors(null)
                         console.log(newUser)
                         setUser(newUser)
-                        alert("Welcome! Check out some boxes!")
-                        navigate('/boxes')
+                        // alert("Welcome! Check out some boxes!")
+                        navigate('/signedup')
                     })
                 } else {
                     res.json().then(response => {

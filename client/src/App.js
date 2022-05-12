@@ -37,10 +37,12 @@ function App() {
           <Route path='/editboxes' element={<AdminBoxes/>} />
           <Route path='/checkout' element={<CheckoutForm/>} />
           <Route path='/myboxes' element={<UserBoxes/>} />
-          <Route path="/loggingout" element={<Loading message={"Logging Out..."} destination={'/boxes'}/>} />
+          <Route path="/loggingout" element={<Loading message={`Logging Out...`} destination={'/boxes'}/>} />
           <Route path="/subscribing" element={<Loading message={"Subscribed! Loading your subscriptions"} destination={'/myboxes'}/>} />
           <Route path="/updating" element={<Loading message={"Updating your changes..."} destination={'/editboxes'}/>} />
           <Route path="/creating" element={<Loading message={"Creating your box..."} destination={'/editboxes'}/>} />
+          <Route path="/loggingin" element={<Loading message={"Logging in..."} destination={'/boxes'}/>} />
+          <Route path="/signedup" element={<Loading message={"Creating your account..."} destination={'/boxes'}/>} />
         </Routes>
       </Router>
     // </UserProvider>

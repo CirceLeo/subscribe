@@ -41,7 +41,9 @@ function LoginPage({}) {
                 })
             }
             setFormData({username: '', password: ''})
+            
         })
+        .then(navigate("/loggingin"))
         .catch( error => console.log(error.message));
     }
 
