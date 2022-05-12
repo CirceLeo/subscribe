@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get '/high-to-low', to: 'boxes#high_to_low'
   get '/low-to-high', to: 'boxes#index'
 
+  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+
+
   # get '*path', to: "fallback#index", constraints: ->(req) {!req.xhr? && req.format.html?}
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -11,10 +11,11 @@ class UsersController < ApplicationController
     end
 
     def show
-        if session[:user_id]
-            render json: @current_user, include: ['subscriptions', 'subscriptions.box'], status: :ok
+        user = User.find_by(id: session[:user_id])
+        if user
+            render json: user, include: ['subscriptions', 'subscriptions.box'], status: :ok
         else
-            render json: {message: "#{session[:user_id]}"}
+            render json: {message: "session user id: #{session[:user_id]}"}, status: :unauthorized
         end
         #     user = User.find(session[:user_id])
         #     render json: user, include: ['subscriptions', 'subscriptions.box'], status: :ok
@@ -34,19 +35,21 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user.update(user_params)
-        render json: @user, status: :accepted
+        @current_user.update(user_params)
+        render json: @current_user, status: :accepted
     end
 
     def destroy
-        @user.destroy
+        @current_user.destroy
         render json: {}, status: 204
     end
 
     private
 
     def find_user
-        @user = User.find(params[:id])
+        if session[:user_id]
+            @current_user ||= User.find_by(id: session[:user_id])
+        end
     end
 
     def user_params

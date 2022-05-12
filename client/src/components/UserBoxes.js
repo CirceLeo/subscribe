@@ -32,7 +32,6 @@ function UserBoxes(props) {
         const date = new Date(sub.created_at)
         return (
             <div key={sub.id} className="userSubscription">
-                {/* <p>things be breaking</p> */}
                 <h3>{sub.box.title}</h3>
                 <img src={sub.box.image_url} alt="picture of a box" className="box-pic"/>
                 <p> Total subscription length: {sub.duration} {sub.duration > 1 ? "months" : "month"} </p>
@@ -50,7 +49,7 @@ function UserBoxes(props) {
             <div className="user-sub-summary">
                 <h4>Summary:</h4>
                 <p><strong>Number of subscriptions:</strong> {renderedSubscriptions.length}</p>
-                <p><strong>Total monthly cost: </strong>$ {user.total_box_cost}</p>
+                <p><strong>Total monthly cost: </strong>$ {user.total_box_cost.toFixed(2)}</p>
             </div>
             <div className="flex">
                 {renderedSubscriptions.length > 0 ? renderedSubscriptions : <p>You have no current subscriptions, sad!</p>}
