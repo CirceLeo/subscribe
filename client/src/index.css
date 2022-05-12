@@ -6,7 +6,7 @@
   /* background-color: aqua; */
   background-image: linear-gradient(to right, aqua, teal);
   text-align: center;
-  border: .2em solid black;
+  /* border: .2em solid black; */
   padding: .2em;
   position: fixed;
   width: 90vw;
@@ -36,17 +36,7 @@ body{
   font-size: 1em;
 }
 
-.checkout, .box-detail, .user-edit-sub {
-  padding: .5em;
-}
 
-.box-detail {
-  align-items: center;
-}
-
-.box-detail h2{
-  text-align: center;
-}
 
 .navLinks a:hover, .fake-header-link:hover, .navLinks button:hover, .modal-button:hover{
   text-decoration: none;

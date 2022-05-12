@@ -19,6 +19,10 @@ body {
   border-radius: 4em;
   max-height: 10em;
 }
+/* 
+.box-description {
+  height: 1em;
+} */
 
 .box-info {
   grid-area: box;
@@ -55,6 +59,19 @@ body {
   /* width: 22em; */
   height: 20em;
   width: auto;
+  display: grid;
+}
+
+.checkout, .box-detail, .user-edit-sub {
+  padding: .5em;
+}
+
+.box-detail {
+  align-items: center;
+}
+
+.box-detail h2{
+  text-align: center;
 }
 
 
@@ -120,7 +137,7 @@ body {
   position: fixed;
   z-index: 20;
   background: rgba(248, 243, 243, 0.85);
-  width: 500px;
+  width: 70vw;
   border-radius: 1em;
 
   /* Center the modal */

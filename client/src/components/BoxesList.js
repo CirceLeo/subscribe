@@ -22,11 +22,11 @@ function BoxesList({ boxInfo, setBoxesURL }) {
 
     function handleSearch(e) {
         setSearchTerm(e.target.value)
-        console.log(searchTerm)
+        // console.log(searchTerm)
     }
 
     function handleSortChange(e) {
-        console.log("changing?")
+        // console.log("changing?")
         setBoxesURL(`/${e.target.value}`)
     }
     
