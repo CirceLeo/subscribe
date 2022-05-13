@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/high-to-low', to: 'boxes#high_to_low'
   get '/low-to-high', to: 'boxes#index'
 
+  get '/admin-boxes', to: 'boxes#admin_index'
+
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
 

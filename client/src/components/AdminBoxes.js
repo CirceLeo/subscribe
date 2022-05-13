@@ -15,11 +15,13 @@ function AdminBoxes() {
     // const [editModal, setEditModal] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:4000/boxes")
+        fetch("/admin-boxes")
         .then( res => res.json())
         .then( data => setAdminBoxes(data))
         .catch( error => console.log(error.message));
     },[])
+
+    // console.log(adminBoxes)
 
     const renderedBoxes = adminBoxes.map((box) => {
         return <AdminBoxItem key={box.id} box={box} openModal={openModal} closeModal={closeModal}/>

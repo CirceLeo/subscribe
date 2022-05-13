@@ -99,7 +99,7 @@ body {
   "form form"
 }
 
-#admin-edit-form{
+.admin-edit-form{
   display: grid;
   text-align: center;
   grid-template-areas:
@@ -109,11 +109,15 @@ body {
   "buttons buttons buttons " ;
 }
 
-#admin-edit-form textarea, #admin-edit-form input{
+.admin-edit-form textarea, #admin-edit-form input{
   margin: .5em;
   width: 90%;
   /* background-color: #321213; */
   /* width: fit-content; */
+}
+
+.admin-edit-form input {
+  width: 80%;
 }
 
 

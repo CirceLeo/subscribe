@@ -62,7 +62,7 @@ function AdminEditBox({ closeModal, boxId }) {
             <button onClick={closeModal} className="close-button">&times;</button>
             <h2 className='modal-title'>Edit {viewedBox.title}!</h2>
             <div >
-            <form id="admin-edit-form" onSubmit={handleEditFormSubmit}>
+            <form className="admin-edit-form" onSubmit={handleEditFormSubmit}>
                 <div className="admin-title">
                     <label className="form-label">Title:</label>
                     <textarea className="form-input" placeholder={viewedBox.title} onChange={handleInputChange} name="title" value={formData.title}></textarea>

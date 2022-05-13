@@ -14,6 +14,10 @@ class BoxesController < ApplicationController
         render json: @box, status: :ok
     end
 
+    def admin_index
+        render json: Box.all.sort_by(&:price), include: ['subscriptions'], status: :ok
+    end
+
     def index
         render json: Box.all.sort_by(&:price), status: :ok
     end
