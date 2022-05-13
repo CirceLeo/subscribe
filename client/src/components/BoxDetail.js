@@ -46,7 +46,7 @@ function BoxDetail({ closeModal, boxId, setModalCheckout }) {
             
             user.username ?
             <>
-            { user.username && userHasBox ? <p>You're already subscribed to this box!</p> : 
+            { user.username && userHasBox ? <p className='already-sub'><strong>You're already subscribed to this box!</strong></p> : 
             <div className='label-btn-div'>
             <label className='btn-label'>Like this box? </label>
             <button className='modal-button' onClick={() => setModalCheckout(true)}>Click here to subscribe!</button>
