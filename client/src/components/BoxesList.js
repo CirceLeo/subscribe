@@ -40,13 +40,14 @@ function BoxesList({ boxInfo, setBoxesURL }) {
         <>
             <div className="boxes-search">
                 <form>
-                <label className="search-bar-label">Search for Boxes: </label>
+                <label className="search-bar-label">Search by name or content: </label>
                     <input className="form-input"
                         name="box-search"
                         type="text"
-                        placeholder="search by name or contents..."
+                        placeholder="search..."
                         onChange={handleSearch}
                     />
+                    <br></br>
                     <label className="search-bar-label">Sort Boxes by Price</label>
                     <select onChange={handleSortChange} className="form-input">
                         <option value="low-to-high">Low to High</option>

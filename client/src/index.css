@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
 *{
-  font-family:'Dosis', sans-serif;
+  font-family:'Poppins', 'Dosis', sans-serif;
 }
 .header {
-  /* background-color: aqua; */
-  background-image: linear-gradient(to right, rgba(133, 201, 201, .5), teal);
+  background-color: white;
+  /* background-image: linear-gradient(to right, rgba(133, 201, 201, .5), teal); */
+  
   text-align: center;
   border-radius: 2em;
   /* border: .2em solid black; */
@@ -13,7 +14,9 @@
   width: 98vw;
   top: .5em;
   height: 7em;
+  box-shadow: gray 2px 2px 5px;
 }
+
 
 body{
   padding-top: 8.5em;
@@ -27,8 +30,10 @@ body{
   text-decoration: none;
   margin: .5em;
   margin-top: 0em;
-  background-color: antiquewhite;
-  border-radius: 5em;
+  /* background-color: antiquewhite; */
+  background-color: white;
+  color: darkblue;
+  border-radius: 1em;
   padding: .2em;
   transition: 1s;
   border: 0px;
@@ -71,8 +76,9 @@ body{
 
 
 .login-form {
-  background-color: #EA9A9D;
-  box-shadow: 2px 2px 20px 10px inset #ddd5d5;
+  background-color:  #dfe3dd;
+  ;
+  /* box-shadow: 2px 2px 20px 10px inset #ddd5d5; */
   /* background-image: linear-gradient(#EA9A9D, #C1292E, #721d20); */
   /* background-color: #BA262B; */
   /* border: #6A8D73 solid 2px; */
@@ -84,11 +90,16 @@ body{
   /* left: 50%; */
 }
 
+/* .login-form label {
+  /* float: left; */
+
+
 
 .signup_form {
   text-align: center;
   align-items: baseline;
 }
+
 .signup_form input {
   margin-left: 1em;
   margin-bottom: .5em;
@@ -105,6 +116,9 @@ body{
 }
 
 .signup_form input, .login-form input {
-  background-color: #BA262B;
-  color: antiquewhite;
+  /* background-color: #BA262B; */
+  background-color: white;
+  color: #0c0666;
+  font-size: 1em;
+  border: 0px;
 }
