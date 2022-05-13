@@ -93,9 +93,9 @@ body{
   /* left: 50%; */
 }
 
-.login-form label {
-  float: left;
-}
+/* .login-form label {
+  /* float: left; */
+
 
 
 .signup_form {
@@ -123,5 +123,5 @@ body{
   background-color: white;
   color: #0c0666;
   font-size: 1em;
-  /* border: 0px; */
+  border: 0px;
 }
