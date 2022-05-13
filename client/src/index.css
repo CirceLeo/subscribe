@@ -93,11 +93,16 @@ body{
   /* left: 50%; */
 }
 
+.login-form label {
+  float: left;
+}
+
 
 .signup_form {
   text-align: center;
   align-items: baseline;
 }
+
 .signup_form input {
   margin-left: 1em;
   margin-bottom: .5em;
