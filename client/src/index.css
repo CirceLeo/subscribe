@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
 *{
-  font-family:'Dosis', sans-serif;
+  font-family:'Poppins', 'Dosis', sans-serif;
 }
 .header {
-  /* background-color: aqua; */
-  background-image: linear-gradient(to right, rgba(133, 201, 201, .5), teal);
+  background-color: white;
+  /* background-image: linear-gradient(to right, rgba(133, 201, 201, .5), teal); */
+  
   text-align: center;
   border-radius: 2em;
   /* border: .2em solid black; */
@@ -13,7 +14,9 @@
   width: 98vw;
   top: .5em;
   height: 7em;
+  box-shadow: gray 2px 2px 5px;
 }
+
 
 body{
   padding-top: 8.5em;
@@ -30,8 +33,10 @@ body{
   text-decoration: none;
   margin: .5em;
   margin-top: 0em;
-  background-color: antiquewhite;
-  border-radius: 5em;
+  /* background-color: antiquewhite; */
+  background-color: white;
+  color: darkblue;
+  border-radius: 1em;
   padding: .2em;
   transition: 1s;
   border: 0px;

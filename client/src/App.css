@@ -4,7 +4,8 @@
   padding: .5em;
   margin: 2em;
   /* background-color: #ddd5d5c9; */
-  background-image: radial-gradient(#C1292E, #EA9A9D);
+  background-color: white;
+  /* background-image: radial-gradient( white, #0c0666); */
   width: fit-content;
   border-radius: 2em;
 }
@@ -18,7 +19,7 @@
 } */
 
 body {
-  background-color: #C1292E;
+  background-color: #dfe3dd;
 }
 
 .box-pic {
@@ -53,6 +54,8 @@ body {
   font-size: 1.25em;
   padding-left: 1em;
   padding-right: 1em;
+  background-color: #0c0666;
+  color: white;
 }
 
 .modal-title {
@@ -205,8 +208,10 @@ body {
   float: left;
   text-align: center;
   justify-content: center;
-  /* background-color: pink; */
-  background-image: linear-gradient(#EA9A9D, #C1292E);
+  background-color: white;
+  /* box-shadow:  2px 2px 5px #0c0666; */
+  /* background */
+  /* background-image: linear-gradient(#EA9A9D, #C1292E); */
   /* border: grey solid 1px; */
   padding: 1rem;
   width: 15rem;
@@ -214,11 +219,19 @@ body {
   display: inline-grid;
   margin: 1rem 2rem;
   border-radius: 1em;
+  transition: .3s;
+
+
+}
+
+.box-items:hover, .userSubscription:hover {
+  box-shadow: 2px 2px #0c0666;
 }
 
 .box-items p, .box-items h1, .userSubscription p {
   padding: .01em;
   margin: .01em;
+  color: #0c0666;
 }
 
 .box-items h1 {
@@ -237,8 +250,9 @@ body {
   text-decoration: none;
   margin: .5em;
   margin-top: 0em;
-  background-color: antiquewhite;
-  border-radius: 5em;
+  background-color: #0c0666;
+  color: whitesmoke;
+  border-radius: 1em;
   padding: .2em;
   transition: 1s;
   border: 0px;
@@ -256,7 +270,7 @@ body {
   /* background-color: #2bba26; */
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(to right, #EA9A9D, #C1292E);
+  /* background-image: linear-gradient(to right, #EA9A9D, #); */
   margin: .5em ;
   padding: .5em;
   border-radius: 1em;
@@ -267,13 +281,16 @@ body {
   color: #321213;
 }
 
-.boxes-search label {
+.boxes-search label, .boxes-search input {
   margin-left: 1em;
   margin-right: .5em;
+  margin-bottom: .5em;
 }
 
 .boxes-search input, .boxes-search select{
-  background-color: #f08f92d9;
+  /* padding: .05em; */
+  background-color: white;
+  border: white;
 }
 
 .overlay {
