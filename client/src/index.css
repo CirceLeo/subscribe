@@ -10,10 +10,12 @@
   /* border: .2em solid black; */
   padding: .2em;
   position: fixed;
-  width: 90vw;
+  width: 98vw;
   top: .5em;
   height: 7em;
 }
+
+
 
 
 body{
@@ -35,6 +37,7 @@ body{
   border: 0px;
   font-family:'Dosis', sans-serif;
   font-size: 1em;
+  overflow: auto;
 }
 
 
