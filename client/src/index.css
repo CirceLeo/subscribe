@@ -26,9 +26,9 @@ body{
   transform: translate(0%);
 }
 
-.navLinks{
+/* .navLinks{
   overflow: clip;
-}
+} */
 .navLinks a, .fake-header-link, .modal-button {
   text-decoration: none;
   margin: .5em;
