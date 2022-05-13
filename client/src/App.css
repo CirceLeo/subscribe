@@ -1,6 +1,4 @@
-#box-container {
-  width: 90%;
-}
+
 
 
 
@@ -127,10 +125,12 @@ body {
 
 .flex {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .box-items, .userSubscription {
+  display: flex;
   margin-left: 10em;
   float: left;
   text-align: center;
@@ -157,9 +157,21 @@ body {
 }
 .box-items button, .userSubscription button {
 
-  border-radius: 5em;
-  width: fit-content;
+  /* border-radius: 5em;
+  /* width: fit-content; */
+  /* background-color: antiquewhite;
   padding: 0em 2em;
+  font-family:'Dosis', sans-serif;
+  font-size: 1em; */ 
+
+  text-decoration: none;
+  margin: .5em;
+  margin-top: 0em;
+  background-color: antiquewhite;
+  border-radius: 5em;
+  padding: .2em;
+  transition: 1s;
+  border: 0px;
   font-family:'Dosis', sans-serif;
   font-size: 1em;
 }
@@ -167,14 +179,13 @@ body {
 .box-items button:hover, .userSubscription button:hover {
   padding: .01em;
   margin: .01em;
-  border-radius: 5em;
-  width: fit-content;
-  padding: 0em 2em;
-  background-color: #EA9A9D;
+  border-radius: 5em; 
 }
 
 .boxes-search{
   /* background-color: #2bba26; */
+  display: flex;
+  justify-content: center;
   background-image: linear-gradient(to right, #EA9A9D, #C1292E);
   margin: .5em ;
   padding: .5em;
@@ -285,7 +296,8 @@ body {
 
 #welcome-user, .header-logo {
   display: inline-block;
-  padding-left: 1.5em;
+  /* padding-left: 1.5em; */
+  font-size: 1.75em;
 }
 
 #logging-out {
@@ -326,3 +338,22 @@ body {
   text-align: center;
 
 }
+
+#logo-img {
+  margin-left: 2em;
+  max-width: 17.5em;
+  max-height: 15em;
+  border-radius: 2em;
+  float: left;
+}
+
+#header-logo-div {
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar-label {
+  font-size: 1.5em;
+}
+
+
