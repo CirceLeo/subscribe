@@ -2,7 +2,18 @@
   width: 90%;
 }
 
+.user-sub-summary{
+  padding: .5em;
+  margin: 2em;
+  /* background-color: #ddd5d5c9; */
+  background-image: radial-gradient(#C1292E, #EA9A9D);
+  width: fit-content;
+  border-radius: 2em;
+}
 
+.user-sub-summary p, .user-sub-summary h4{
+  margin: .5em;
+}
 
 /* * {
   background-color: #EA9A9D;
@@ -51,10 +62,14 @@ body {
   margin: 0.15em;
 }
 
-.box-description {
+.login-page{
+  justify-content: center;
+}
+
+/* .box-description {
   overflow: scroll;
   max-height: 4em;
-}
+} */
 
 .box-info {
   grid-area: box;
@@ -83,8 +98,59 @@ body {
   "box sub"
   "box sub"
   "minititle minititle"
-  "form form";
+  "form form"
 }
+
+#admin-edit-form{
+  display: grid;
+  text-align: center;
+  grid-template-areas:
+  "title image price "
+  "items items items "
+  "description  description description"
+  "buttons buttons buttons " ;
+}
+
+#admin-edit-form textarea, #admin-edit-form input{
+  margin: .5em;
+  width: 90%;
+  /* background-color: #321213; */
+  /* width: fit-content; */
+}
+
+
+.admin-title{
+  grid-area: title;
+}
+
+.admin-image{
+  grid-area: image;
+}
+
+.admin-price{
+  grid-area: price;
+}
+
+.admin-contents{
+  grid-area: items;
+}
+
+.admin-contents textarea{
+  height: 6em;
+}
+
+.admin-description{
+  grid-area: description;
+}
+
+.admin-description textarea{
+  height: 6em;
+}
+
+.admin-btn {
+  grid-area: buttons;
+}
+
 
 .box-detail .box-pic {
   border: #BA262B solid 2px;
@@ -203,7 +269,9 @@ body {
   top: 0;
   left: 0;
   z-index: 10;
+  /* overflow: hidden */
 }
+
 
 .modal {
   position: fixed;
@@ -314,15 +382,11 @@ body {
   border-radius: 1em;
 }
 
+
 .loading-page {
   text-align: center;
 }
 
 #loading-cat {
   height: 20em;
-}
-
-#admin-edit-form {
-  text-align: center;
-
 }

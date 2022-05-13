@@ -60,7 +60,7 @@ function LoginPage({}) {
         setShowSignUp(false)
     }
     return (
-        <div>
+        <div className="login-page">
             <Header />
             <form className="login-form" onSubmit={handleSubmit}>
             <h1>Login</h1>

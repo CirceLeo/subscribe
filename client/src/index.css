@@ -78,6 +78,7 @@ body{
   align-items: center;
   /* flex: auto; */
   width: 70vw;
+  font-size: 1.5em;
   /* left: 50%; */
 }
 
@@ -86,19 +87,21 @@ body{
   text-align: center;
   align-items: baseline;
 }
+
+.signup_form label {
+  float: left;
+  width: 200px;
+  padding-right: 20px;
+  /* margin-bottom: 5px; */
+}
 .signup_form input {
-  margin-left: 1em;
-  margin-bottom: .5em;
-  right: 80%;
+  float: left;
+  width: calc(100%-200px);
 }
 
 .login-form button {
   padding: .5em;
   margin: .5em;
-}
-
-.signup_form label {
-  margin-right: .5em;
 }
 
 .signup_form input, .login-form input {

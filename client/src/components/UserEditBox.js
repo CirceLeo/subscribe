@@ -78,14 +78,15 @@ function UserEditBox({closeModal, curSub}) {
                             min={0}
                             />
                         months</p> 
+                        <br/>
+                        {
+                            changeTotal ? <p className='total-cost'>Total Cost: $ {showSub.box.price * changeDurationValue}</p> : <p className='total-cost'>Total Cost: $ {showSub.box.price * showSub.duration}</p>
+                        }
                         <div className='user-edit-buttons'>
                             <button className='modal-button'>Submit change</button>
                             <button  className='modal-button' onClick={handleEndSub}>End Subscription</button>
                         </div>
                         
-                        {
-                            changeTotal ? <p>Total Cost: $ {showSub.box.price * changeDurationValue}</p> : <p>Total Cost: $ {showSub.box.price * showSub.duration}</p>
-                        }
                         
                         {/* <p><strong>Length of subscription: </strong>{showSub.duration} months</p> */}
                     </form>

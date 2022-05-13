@@ -41,10 +41,17 @@ function AdminBoxes() {
         setOpenCreateBox(true)
     }
 
+    useEffect(()=> {
+        if(modalOpen)
+        {document.body.style.overflow = 'hidden';}
+        else {
+            document.body.style.overflow = 'visible'}
+    }, [modalOpen])
+
     return (
         <div>
             <Header/>
-            <button onClick={handleCreateClick}>Create a new box</button>
+            <button className="modal-button" onClick={handleCreateClick}>Create a new box</button>
             <div className='flex'>
             {
                 modalOpen && (
@@ -52,13 +59,11 @@ function AdminBoxes() {
                     <div className="overlay"></div>
                     <div className="modal">
                         
-                    {/* <main className="modal__main"> */}
                         {  modalOpen && openCreateBox ? 
                         <AdminCreateBox closeModal={closeModal}/> 
                         :
                         <AdminEditBox closeModal={closeModal} boxId={selectedBox}/>
                         }
-                    {/* </main> */}
                     </div>
                     </>
                 )
