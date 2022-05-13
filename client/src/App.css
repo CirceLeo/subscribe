@@ -425,4 +425,33 @@ body {
   font-size: 1.5em;
 }
 
+@media only screen and (max-width: 843px) {
+  .navLinks {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    height: 100%;
+    width: 100%;
+  }
+
+  #welcome-column {
+    display: none;
+  }
+
+  .box-items p {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 775px) {
+  .search-bar-label {
+    font-size: 1em;
+  }
+
+  .form-input {
+    font-size: 1em;
+  }
+
+}
 

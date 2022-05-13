@@ -15,9 +15,6 @@
   height: 7em;
 }
 
-
-
-
 body{
   padding-top: 8.5em;
 }
@@ -38,6 +35,10 @@ body{
   font-family:'Dosis', sans-serif;
   font-size: 1em;
 }
+
+/* .navLinks {
+  overflow-x: scroll;
+} */
 
 
 

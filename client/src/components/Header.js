@@ -31,7 +31,7 @@ function Header(props) {
                 </div>
 
                     {/* if there's a current user, include welcome name */}
-                <div className="column">
+                <div id="welcome-column" className="column">
                     {user.username ? <h2 id="welcome-user">{`Welcome, ${user.username}`}</h2> : <h2 id="welcome-user">Welcome to Subscrybe</h2>}
                 </div>
                 <div className="column">
