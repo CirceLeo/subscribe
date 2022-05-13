@@ -66,8 +66,8 @@ function SignUpForm({closeSignUp}) {
             <p>Fill out your details below to sign up:</p>
             {showErrors ? <p className="signup_issues">{errors} <button className="close-button" onClick={() => setShowErrors(false)}>X</button></p> : null }
             <form onSubmit={handleSubmit}>
-                <label>username</label>
-                <input
+                <label className="form-label">username:</label>
+                <input className="form-input"
                     type="text"
                     name="username"
                     value={formData.username}
@@ -75,8 +75,8 @@ function SignUpForm({closeSignUp}) {
                     required
                 />
                 <br/>
-                <label>email address</label>
-                <input
+                <label className="form-label">email address:</label>
+                <input className="form-input"
                     type="email"
                     name="email"
                     value={formData.email}
@@ -84,8 +84,8 @@ function SignUpForm({closeSignUp}) {
                     required
                 />
                 <br/>
-                <label>password</label>
-                <input
+                <label className="form-label">password:</label>
+                <input className="form-input"
                     type="password"
                     name="password"
                     value={formData.password}
@@ -93,8 +93,8 @@ function SignUpForm({closeSignUp}) {
                     required
                 />
                 <br/>
-                <label>confirm password</label>
-                <input
+                <label className="form-label">confirm password:</label>
+                <input className="form-input"
                     type="password"
                     name="password_confirm"
                     value={formData.password_confirm}
