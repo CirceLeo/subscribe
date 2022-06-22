@@ -6,7 +6,7 @@ function BoxesPage() {
 
     const [boxInfo, setBoxInfo] = useState([]);
 
-    const [boxesURL, setBoxesURL] = useState(`http://localhost:4000/low-to-high`)
+    const [boxesURL, setBoxesURL] = useState(`low-to-high`)
 
     useEffect(() => {
         fetch(boxesURL)
