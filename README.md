@@ -1,24 +1,22 @@
-# README
+Subscribe is a React and Ruby based web app designed to help users browse and manage subscription boxes created by Calypso Leonard and Tom Kinsella 1 week, as a project for Flatiron School's Software Engineering program. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+PROJECT REQUIREMENTS:
 
-* System dependencies
 
-* Configuration
+INITIAL DESIGN & OBJECTIVES:
 
-* Database creation
+STRETCH OBJECTIEVES:
 
-* Database initialization
 
-* How to run the test suite
+LEARNINGS:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+game logic
+object manipulation
+using fetch requests & APIs
+functions
+CSS styling
+CSS animation
+troubleshooting and debugging
+GitHub workflow & version control
